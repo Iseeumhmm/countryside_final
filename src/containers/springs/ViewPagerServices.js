@@ -1,10 +1,11 @@
 import React, { useRef } from 'react'
-import { Link } from 'components/Router'
 import clamp from 'lodash-es/clamp'
 import { useSprings, animated } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
 import styled from 'styled-components'
 var ids = require('short-id')
+const swipe = require('../../images/icons/swipe-left.png')
+require('../../components/SwipeGesture')
 
 const ViewPagerContainer = styled.div`
   position: relative;
@@ -58,6 +59,12 @@ const ViewPagerContainer = styled.div`
       width: 100%;
     }
   }
+  swipe-gesture {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `
 
 export default function Viewpager(props) {
@@ -92,7 +99,9 @@ export default function Viewpager(props) {
             <animated.div 
               style={{backgroundImage: `url(${props.images[1][i]['full1920x1280'].fields.file.url}?fm=jpg&w=1920&q=50&fl=progressive)`}}
               className={ i % 2 === 0 ? "picture" : "picture right" }
-            />
+            >
+              <swipe-gesture src={swipe}/>
+            </animated.div>
           </div>
       </animated.div>
   ))

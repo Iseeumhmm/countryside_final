@@ -104,8 +104,8 @@ function Home() {
 
       <BannerText />
       <SocialIcons>
-        <a href="https://www.instagram.com/countrysidelandscapeaylmer/" target="_blank" without rel="noopener noreferrer"><img src={instagram} style={{ width: "4rem", margin: "1rem" }} alt="Instagram icon"/></a>
-        <a href="https://www.facebook.com/pages/category/Landscape-Company/Countryside-Landscape-1484042294955435/" target="_blank"><img src={facebook} style={{ width: "4rem", margin: "1rem" }} alt="Facebook icon"/></a>
+        <a href="https://www.instagram.com/countrysidelandscapeaylmer/" target="_blank" rel="noopener noreferrer"><img src={instagram} style={{ width: "4rem", margin: "1rem" }} alt="Instagram icon"/></a>
+        <a href="https://www.facebook.com/pages/category/Landscape-Company/Countryside-Landscape-1484042294955435/" target="_blank" rel="noopener noreferrer"><img src={facebook} style={{ width: "4rem", margin: "1rem" }} alt="Facebook icon"/></a>
       </ SocialIcons>
     </Container>
   )

@@ -144,8 +144,8 @@ export default function Contact() {
             <ContactButton className="artibot-button-expand">QUOTE</ContactButton>
             <FooterTextContainer>
                 <h2 style={{ fontSize: "2.5rem" }}>505 Talbot St. E. Aylmer, ON</h2>
+                <h2 style={{textAlign: "left"}}>VINCE<a href="tel: 519-403-5699" style={{float: "right"}}>(519) 403-5699</a></h2>
                 <h2 style={{textAlign: "left"}}>JOHN<a href="tel: 519-619-9593" style={{float: "right"}}>(519) 619-9593</a></h2>
-                <h2 style={{textAlign: "left"}}>VINCE<a href="tel: 519-619-9593" style={{float: "right"}}>(519) 619-9593</a></h2>
             </FooterTextContainer>
           </TextContainer>
         </PageContainer>

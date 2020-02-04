@@ -34,6 +34,8 @@ export default function BannerNav(props) {
                 }}>
                 <Link 
                     to="/pool-installs"
+                    ga-on="click"
+                    ga-event-category="our-work"
                     style={{
                         color: "#93D40A"
                     }}

@@ -4,7 +4,7 @@ import NavBar from '../containers/navigation/navbar'
 import { useRouteData, Head } from 'react-static'
 import ViewPager from '../containers/springs/ViewPagerServices'
 import styled from 'styled-components'
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 const logo = require('../images/logos/LargeLogo.png')
 
 //Styles
@@ -44,6 +44,7 @@ const HeaderContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 `
 
 const Services = () => {
@@ -74,12 +75,10 @@ const Services = () => {
                 }) : null}
             </Head>
             <HeaderContainer id="header">
-                {/* <NavBar black style={{zIndex: "1000"}}/> */}
+                <NavBar style={{zIndex: "1000"}}/>
                 <Link to="/"><Logo /></Link>
             </HeaderContainer>
-            
             <ViewPager images={pageImages} />
-           
         </PageContainer>
     )
 

@@ -5,6 +5,7 @@ import { useRouteData } from 'react-static'
 import Markdown from 'react-markdown'
 import NavBar from '../containers/navigation/navbar'
 import FooterNav from '../containers/navigation/footerNav'
+// require('../components/lazyLoad.js')
 const background = require('../images/backgrounds/about.jpg')
 const backgroundLarge = require('../images/backgrounds/aboutLarge.jpg')
 const logo = require('../images/logos/LargeLogoBlack.png')
@@ -116,7 +117,6 @@ const Photo = styled.img`
 
 export default function About() {
   const { ourStoryContent } = useRouteData()
-
   return (
     <PageContainer>
       <HeaderContainer>
@@ -137,6 +137,8 @@ export default function About() {
       <TextContainer>
         <div style={{width: '100%', textAlign: 'center', padding: "3.2rem 0"}}>
           <Photo src={`${ourStoryContent[0].fields.headShotPhoto.fields.file.url}?w=300&fl=progressive`}/>
+          {/* <lit-lazy-image id="img" alt="img" src={`${ourStoryContent[0].fields.headShotPhoto.fields.file.url}?w=300&fl=progressive`}> */}
+          {/* </lit-lazy-image> */}
           <h2>{ourStoryContent[0].fields.name}</h2>
         </div>
         <Markdown source={ourStoryContent[0].fields.bioText} />

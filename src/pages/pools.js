@@ -1,15 +1,14 @@
 import React, { useEffect, useState} from 'react'
-// import { Head } from 'react-static'
 import { Link } from 'components/Router'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { useRouteData } from 'react-static'
 import NavBar from '../containers/navigation/navbar'
 import ViewStack from '../containers/springs/view-pager'
 import instagram from '../components/helperFuncrtions/getInstagram'
 import FooterNav from '../containers/navigation/footerNav'
+import TextContainer from '../containers/pools/TextContainer'
 const background = require('../images/backgrounds/poolPage.jpg')
 const backgroundLarge = require('../images/backgrounds/poolPage_2360.jpg')
-const swipe = require('../images/icons/swipe-left.png')
 
 const logo = require('../images/logos/LargeLogoBlack.png')
 const catalogue = require('../../public/Leisure Pools Consumer Brochure 2019-0424.pdf')
@@ -55,114 +54,6 @@ const Logo = styled.div`
         left: 50%;
     }
 `
-const swipeGesture = keyframes`
-0%      { transform: translateX(50px) }
-50%     { transform: translateX(-50px) }
-100%    { transform: translateX(50px) }
-`
-const TextContainer = styled.div`
-    border-radius: 2rem;
-    /* width: 95%; */
-    margin: auto;
-    position: relative;
-    h1 { color: ${({ theme: {lightGrey} }) => lightGrey }}; 
-    color: ${({ theme: {lightGrey} }) => lightGrey };
-    text-align: center;
-    h2 { padding: ${({ theme: {headerPadding} }) => headerPadding }}
-    p, h2 { 
-        text-align: left;
-        color: ${({ theme: {lightGrey} }) => lightGrey };
-     }
-     img { 
-         width: 5rem;
-         animation: ${swipeGesture} 2s ease-in-out infinite;
-    }
-    li {
-        font-family: 'Roboto',sans-serif;
-        text-align: left;
-    }
-    
-    &#one { 
-        padding-top: 76vw; 
-        a { 
-            display: block;
-            margin: 5.2rem 0; 
-        }
-    }
-    @media( min-width: 675px ) {
-        &#one { padding-top: 62vw; }
-        width: 48rem;
-    }
-    @media( min-width: 875px ) {
-        h1 { text-align: left }
-        width: 60rem;
-    }
-    @media( min-width: 950px ) {
-        &#one {
-            padding-top: 48vw;
-        }
-        width: 65%;
-    }
-    @media( min-width: 1295px ) {
-        padding: 0 1rem;
-        height: 20rem;
-        
-        background-color: rgba(0,0,0,.05);
-        h1 { text-align: center; }
-        h2 {
-            padding: 0;
-        }
-        margin-top: 0;
-        width: 95%;
-        &#one { 
-            padding-top: 0;
-            grid-column: 1/6; 
-            grid-row: 1;
-            background-color: unset;
-            a { margin: 0; }
-        }
-        &#two { 
-            height: 40.75rem;
-            grid-column: 4/6;
-            grid-row: 2/4;
-            p { padding-bottom: 0; }
-            img { 
-                bottom: 5rem;
-                position: relative; 
-            }
-        }
-        &#three { 
-            height: 40rem;
-            grid-column: 1/3;
-            grid-row: 4/6;
-        }
-        &#four { 
-            grid-column: 1/4;
-            grid-row: 2;
-        }
-        &#five { 
-            /* margin: auto 0; */
-            grid-column: 1/4;
-            grid-row: 3;
-        }
-        &#six { 
-            height: 40rem;
-            grid-column: 3/6;
-            grid-row: 4/6;
-        }
-        &#seven { 
-            grid-column: 1/6;
-            grid-row: 8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 75.5vw;
-            @media(min-width: 2300px ){
-                width: 98%;
-            }
-        }
-    }
-`
 
 const ContentContainer = styled.div`
     width: 95%;
@@ -204,20 +95,22 @@ const ContentContainer = styled.div`
 const ViewStackContainer = styled.div`
     position: relative;
     width: 100%;
-    height: auto;
+    height: 95vw;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 7px;
     h2 { padding: 0; }
     @media( min-width: 675px ){
-        height: 48rem;
+        height: 49rem;
+    }
+    @media( min-width: 875px ){
+        height: 62rem;
+    }
+    @media( min-width: 950px ){
+        height: 53vw;
     }
     @media( min-width: 1295px ){
-        height: 38rem;
-    }
-    
-    @media( min-width: 1300px ) {
-        height: 40rem;
+        height: 28vw;
     }
 `
 
@@ -262,11 +155,10 @@ export default function Pools() {
                         <ViewStackContainer id="view-pager-container">
                             { divWidth ? <ViewStack width={divWidth} slideType="contentful" slideImages={contentfulImages}/> : ""}
                         </ViewStackContainer>
-                        <img src={swipe} alt="swipe gesture"></img>
                     </TextContainer>
                     <TextContainer id="three">
                         <ViewStackContainer instagram id="view-pager-container-2">
-                            <p style={{padding: "0"}}>Swipe through our Instagram Feed!</p>
+                            
                             { divWidth ? instagramFeed ? <ViewStack width={divWidth} slideType="instagram" slideImages={instagramFeed}/> : <h2>Loading...</h2> : ""}
                         </ViewStackContainer>
                     </TextContainer>
