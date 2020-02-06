@@ -30,8 +30,8 @@ const Logo = styled.div`
     left: 50%;
     top: 2rem;
     transform: translateX(-50%);
-    width: 23rem;
-    min-height: 8rem;
+    width: 25rem;
+    height: 9rem;
     background-image: url(${logo});
     background-size: cover;
     background-position: center center;
@@ -40,7 +40,7 @@ const Logo = styled.div`
 const HeaderContainer = styled.div`
     position: absolute;
     width: 100vw;
-    height: 9rem;
+    height: 13rem;
     display: flex;
     align-items: center;
     justify-content: center;

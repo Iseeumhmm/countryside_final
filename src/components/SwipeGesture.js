@@ -1,4 +1,3 @@
-import swipe from '../images/icons/swipe-left.png';
 class SwipeGesture extends HTMLElement {
   constructor() {
     super();

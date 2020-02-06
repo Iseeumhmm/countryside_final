@@ -73,7 +73,7 @@ export default function Viewpager(props) {
 
   const [properties, set] = useSprings(props.images[1].length, i => ({ x: i * window.innerWidth, sc: 1, display: 'block' }))
   const bind = useGesture(({ down, delta: [xDelta], direction: [xDir], distance, cancel }) => {
-    if (down && distance > window.innerWidth / 2)
+    if (down && distance > window.innerWidth / 4)
       cancel((index.current = clamp(index.current + (xDir > 0 ? -1 : 1), 0, props.images[1].length - 1)))
     set(i => {
       if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }

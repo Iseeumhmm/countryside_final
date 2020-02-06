@@ -4,7 +4,7 @@ import clamp from 'lodash-es/clamp'
 import { useSprings, animated } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
 import styled from 'styled-components'
-// const swipe = require('../../images/icons/swipe-left.png')
+const swipe = require('../../images/icons/swipe-left.png')
 const poster = require('../../images/icons/instagram_video_poster.jpg')
 var ids = require('short-id')
 require('../../components/SwipeGesture')
@@ -119,7 +119,7 @@ export default function Viewpager(propsFrom) {
       {passedType === "instagram" ? <a key={`${i}_link`} target="_blank" rel="noopener noreferrer" href={`${pages[i][3]}`}>
       <p>{pages[i][0].substring(0, 100)}{ pages[i][0].length > 100 ? <span style={{textTransform: 'underline'}}> ...Read More</span> : "" }</p>
       </a>  : null }
-      {passedType === "contentful" ? <swipe-gesture /> : null }
+      {passedType === "contentful" ? <swipe-gesture src={swipe}/> : null }
 
 
     </animated.div>
