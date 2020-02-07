@@ -75,9 +75,9 @@ const Services = () => {
                 }) : null}
             </Head>
             <HeaderContainer id="header">
-                <NavBar style={{zIndex: "1000"}}/>
                 <Link to="/"><Logo /></Link>
             </HeaderContainer>
+            <NavBar style={{zIndex: "1000"}}/>
             <ViewPager images={pageImages} />
         </PageContainer>
     )
