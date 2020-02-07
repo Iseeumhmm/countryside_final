@@ -50,6 +50,8 @@ const HeaderContainer = styled.div`
 const Services = () => {
     const pageImages = useRouteData()
     const [images, setImages] = useState(null)
+    const [projects, setProjects] = useState(null)
+
     // const [loaded, setLoaded] = useState(false)
     useEffect(() => {
         let imageArray = []
@@ -72,11 +74,13 @@ const Services = () => {
                     image.description = each.description
                     image.image = `${each.image[i].fields.file.url}?w=1920&q=40&fl=progressive`
                 } else {
+                    image.title = null
                     image.image = `${each.image[i].fields.file.url}?w=1920&q=40&fl=progressive`
                 }
                 projectArray.push(image)
             }
         })}
+        setProjects(projectArray)
     }, [])
     // const imageLoaded = () => {
     //     setLoaded(true)
@@ -93,7 +97,7 @@ const Services = () => {
                 <NavBar style={{zIndex: "1000"}}/>
                 <Link to="/"><Logo /></Link>
             </HeaderContainer>
-            <ViewPager images={pageImages[0]}/>
+            { projects ? <ViewPager images={pageImages[0]} projects={projects}/> : null}
         </PageContainer>
     )
 
