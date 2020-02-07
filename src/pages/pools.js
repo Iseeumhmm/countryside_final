@@ -115,13 +115,14 @@ const ViewStackContainer = styled.div`
 `
 
 export default function Pools() {
-    const { contentfulImages } = useRouteData()
+    const  pageImages  = useRouteData()
     const [ divWidth, setDivWidth ] = useState(null)
     const [ instagramFeed, setInstagramFeed ] = useState(null)
     const getWidth = (ele) => {
         setDivWidth(ele)
     }
     useEffect(() => {
+        console.log("contentful: ", pageImages)
         let element = document.getElementById("view-pager-container").offsetWidth
         getWidth(element)
         window.addEventListener( 'resize', getWidth(element) );
@@ -153,7 +154,7 @@ export default function Pools() {
                     </TextContainer>
                     <TextContainer id="two">
                         <ViewStackContainer id="view-pager-container">
-                            { divWidth ? <ViewStack width={divWidth} slideType="contentful" slideImages={contentfulImages}/> : ""}
+                            { divWidth ? <ViewStack width={divWidth} slideType="contentful" slideImages={pageImages}/> : ""}
                         </ViewStackContainer>
                     </TextContainer>
                     <TextContainer id="three">

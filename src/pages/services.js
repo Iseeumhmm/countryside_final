@@ -50,10 +50,10 @@ const HeaderContainer = styled.div`
 const Services = () => {
     const pageImages = useRouteData()
     const [images, setImages] = useState(null)
-    const [loaded, setLoaded] = useState(false)
-    let imageArray = []
+    // const [loaded, setLoaded] = useState(false)
     useEffect(() => {
-        if (pageImages[1]) { pageImages[1].forEach( each => {
+        let imageArray = []
+        if (pageImages[0][1]) { pageImages[0][1].forEach( each => {
             let image = {
                 title: each.shortTitle,
                 description: each.shortDescriptionOfImage,
@@ -62,10 +62,25 @@ const Services = () => {
             imageArray.push(image)
         })}
         setImages(imageArray)
+
+        let projectArray = []
+        if (pageImages[1][1]) { pageImages[1][1].forEach( each => {
+            for ( let i = 0; i < each.image.length; i++ ) {
+                let image = {}
+                if ( i === 0 ) {
+                    image.title = each.title
+                    image.description = each.description
+                    image.image = `${each.image[i].fields.file.url}?w=1920&q=40&fl=progressive`
+                } else {
+                    image.image = `${each.image[i].fields.file.url}?w=1920&q=40&fl=progressive`
+                }
+                projectArray.push(image)
+            }
+        })}
     }, [])
-    const imageLoaded = () => {
-        setLoaded(true)
-    }
+    // const imageLoaded = () => {
+    //     setLoaded(true)
+    // }
 
     return (
         <PageContainer>
@@ -78,7 +93,7 @@ const Services = () => {
                 <NavBar style={{zIndex: "1000"}}/>
                 <Link to="/"><Logo /></Link>
             </HeaderContainer>
-            <ViewPager images={pageImages} />
+            <ViewPager images={pageImages[0]}/>
         </PageContainer>
     )
 
