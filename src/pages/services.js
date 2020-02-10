@@ -16,6 +16,7 @@ const PageContainer = styled.div`
     flex-flow: column nowrap;
     width: 100vw;
     height: 100vh;
+    /* min-height: ${ ({height}) => height }px; */
     h1 {color: ${({theme: {darkGrey}}) => darkGrey}; }
     h3 {
         color: ${({theme: {darkGrey}}) => darkGrey};
@@ -53,9 +54,11 @@ const Services = () => {
     const pageImages = useRouteData()
     const [images, setImages] = useState(null)
     const [projects, setProjects] = useState(null)
+    const [winHeight, setWinHeight] = useState(null)
 
     // const [loaded, setLoaded] = useState(false)
     useEffect(() => {
+        // setWinHeight(window.innerHeight)
         let imageArray = []
         if (pageImages[0][1]) { pageImages[0][1].forEach( each => {
             let image = {
