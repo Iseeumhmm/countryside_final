@@ -24,11 +24,13 @@ const ViewPagerContainer = styled.div`
     will-change: transform;
   }
   .picture {
+    position: relative;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
-    height: ${ ({ height }) => height}px;
+    height: ${ ({width}) => width > 1140 ? "100%" :  "50%"};
+    /* height: ${ ({ height }) => height}px; */
     will-change: transform;
   }
   .split_page {
