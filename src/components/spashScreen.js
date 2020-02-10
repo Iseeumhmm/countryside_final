@@ -24,9 +24,11 @@ const SplashContainer = styled.div`
     transform: translate(-50%, -50%);
 `
 const Logo = styled.div`
-        background-image: url(${logo});
-
+    background-image: url(${logo});
     background-size: cover;
+    position: relative;
+    right: 1rem;
+    margin:  1rem auto;
     width: 25rem;
     height: 9rem;
   
@@ -127,8 +129,8 @@ const SphereRef = styled.div`
 const SplashScreen = () => {
     return (
         <PageContainer >
+            <Logo />
             <SplashContainer>
-                <Logo />
                 <Mana>
                     <Bowl />  
                     <SphereRef />

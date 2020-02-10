@@ -42,7 +42,7 @@ const FireFoxHome = styled.div`
 `
 
 function Home() {
-  const { homePageSliderImages } = useRouteData()
+  const homePageSliderImages = useRouteData()
   const [viewHeight, setViewHeight] = useState(0)
   const [browser, setBrowser] = useState(0)
   const [loading, setLoading] = useState(true)
@@ -62,12 +62,10 @@ function Home() {
     setViewHeight(ele)
   }
   useEffect( () => {
-
     let toPreload = []
-    homePageSliderImages.forEach( link => {
+    homePageSliderImages.items.forEach( link => {
         toPreload.push([ `${link}?w=1920&q=40&fl=progressive` ])
     })
-    // console.log(toPreload)
     var head = document.getElementsByTagName('head')[0];
     toPreload.forEach( each => {
         var link = document.createElement('link');
@@ -100,7 +98,7 @@ function Home() {
     <Container vh={viewHeight} style={{position: "relative", overflowX: "hidden"}}>
        {browser}
       <NavBar style={{zIndex: "1000"}}/>
-      {firefox ? <FireFoxHome vh={viewHeight} image={homePageSliderImages[0]}/> : <KenBurns images={ homePageSliderImages } />}
+      {firefox ? <FireFoxHome vh={viewHeight} image={homePageSliderImages.items[0]}/> : <KenBurns images={ homePageSliderImages.items } />}
 
       <BannerText />
       <SocialIcons>

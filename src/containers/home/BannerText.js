@@ -27,7 +27,7 @@ const TextContainer = styled.div`
 `
 const Logo = styled.div`
     position: relative;
-    margin: 0 auto 1rem;
+    margin: 1rem auto 1rem;
     right: 1rem;
     width: 25rem;
     min-height: 9rem;
@@ -39,9 +39,9 @@ const Logo = styled.div`
 export default function Banner(props) {
     return (
         <React.Fragment>
+            <Logo />
             <TextContainer>
-                <Logo />
-                <h1>Your London Pool Builder</h1>
+                <h1>Your London &amp; Area Pool Builder</h1>
                 <BannerNav />
             </TextContainer>
         </React.Fragment>

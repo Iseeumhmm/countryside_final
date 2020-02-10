@@ -68,13 +68,11 @@ const ViewPagerContainer = styled.div`
 `
 
 export default function Viewpager(props) {
-
   const index = useRef(0)
-
-  const [properties, set] = useSprings(props.images[1].length, i => ({ x: i * window.innerWidth, sc: 1, display: 'block' }))
+  const [properties, set] = useSprings(props.projects.length, i => ({ x: i * window.innerWidth, sc: 1, display: 'block' }))
   const bind = useGesture(({ down, delta: [xDelta], direction: [xDir], distance, cancel }) => {
     if (down && distance > window.innerWidth / 4)
-      cancel((index.current = clamp(index.current + (xDir > 0 ? -1 : 1), 0, props.images[1].length - 1)))
+      cancel((index.current = clamp(index.current + (xDir > 0 ? -1 : 1), 0, props.projects.length - 1)))
     set(i => {
       if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }
       const x = (i - index.current) * window.innerWidth + (down ? xDelta : 0)
@@ -88,17 +86,17 @@ export default function Viewpager(props) {
         style={{ display, transform: x.interpolate(x => `translate3d(${x}px,0,0)`) }}
         className="main"
         >
-          <div className={ i % 2 === 0 ?  "" : "split_page"}>
+          <div className={ props.projects[i].title ? "split_page" : "" }>
             <div 
-              className={ i % 2 === 0 ?  "" : "left"} 
-              style={{ display: i % 2 === 0 ? "none" : "flex" }}
+              className={ props.projects[i].title ? "left" : "" } 
+              style={{ display: props.projects[i].title ? "flex" : "none" }}
               >
-                <h1>{props.images[1][i]['shortTitle']}</h1>
-                <p>{props.images[1][i]['shortDescriptionOfImage']}</p>
+                <h1>{props.projects[i]['title']}</h1>
+                <p>{props.projects[i]['description']}</p>
             </div>
             <animated.div 
-              style={{backgroundImage: `url(${props.images[1][i]['full1920x1280'].fields.file.url}?fm=jpg&w=1920&q=50&fl=progressive)`}}
-              className={ i % 2 === 0 ? "picture" : "picture right" }
+              style={{backgroundImage: `url(${props.projects[i]['image']}`}}
+              className={ props.projects[i]['title'] ? "picture right" : "picture"}
             >
               <swipe-gesture src={swipe}/>
             </animated.div>

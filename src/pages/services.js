@@ -10,9 +10,11 @@ const logo = require('../images/logos/LargeLogo.png')
 //Styles
 
 const PageContainer = styled.div`
+    position: relative;
+    overflow-x: hidden;
     display: flex;
     flex-flow: column nowrap;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     h1 {color: ${({theme: {darkGrey}}) => darkGrey}; }
     h3 {
@@ -50,10 +52,12 @@ const HeaderContainer = styled.div`
 const Services = () => {
     const pageImages = useRouteData()
     const [images, setImages] = useState(null)
-    const [loaded, setLoaded] = useState(false)
-    let imageArray = []
+    const [projects, setProjects] = useState(null)
+
+    // const [loaded, setLoaded] = useState(false)
     useEffect(() => {
-        if (pageImages[1]) { pageImages[1].forEach( each => {
+        let imageArray = []
+        if (pageImages[0][1]) { pageImages[0][1].forEach( each => {
             let image = {
                 title: each.shortTitle,
                 description: each.shortDescriptionOfImage,
@@ -62,10 +66,27 @@ const Services = () => {
             imageArray.push(image)
         })}
         setImages(imageArray)
+
+        let projectArray = []
+        if (pageImages[1][1]) { pageImages[1][1].forEach( each => {
+            for ( let i = 0; i < each.image.length; i++ ) {
+                let image = {}
+                if ( i === 0 ) {
+                    image.title = each.title
+                    image.description = each.description
+                    image.image = `${each.image[i].fields.file.url}?w=1920&q=40&fl=progressive`
+                } else {
+                    image.title = null
+                    image.image = `${each.image[i].fields.file.url}?w=1920&q=40&fl=progressive`
+                }
+                projectArray.push(image)
+            }
+        })}
+        setProjects(projectArray)
     }, [])
-    const imageLoaded = () => {
-        setLoaded(true)
-    }
+    // const imageLoaded = () => {
+    //     setLoaded(true)
+    // }
 
     return (
         <PageContainer>
@@ -78,7 +99,7 @@ const Services = () => {
                 <Link to="/"><Logo /></Link>
             </HeaderContainer>
             <NavBar style={{zIndex: "1000"}}/>
-            <ViewPager images={pageImages} />
+            { projects ? <ViewPager id="view_pager" images={pageImages[0]} projects={projects}/> : null}
         </PageContainer>
     )
 

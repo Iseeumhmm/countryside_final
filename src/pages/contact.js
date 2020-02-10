@@ -124,7 +124,7 @@ export default function Contact() {
       script.async = true
       script.id = "artibot";
       script.setAttribute('crossorigin','SameSite=None')
-      script.innerHTML = "!function(t,e){t.artibotApi={l:[],t:[],on:function(){this.l.push(arguments)},trigger:function(){this.t.push(arguments)}};var a=!1,i=e.createElement('script');i.async=!0,i.type='text/javascript',i.src='https://app.artibot.ai/loader.js',e.getElementsByTagName('head').item(0).appendChild(i),i.onreadystatechange=i.onload=function(){if(!(a||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState)){new window.ArtiBot({i:'31743cbc-72f3-4c39-91de-9447c14185d7'});a=!0}}}(window,document);"
+      script.innerHTML = "!function(t,e){t.artibotApi={l:[],t:[],on:function(){this.l.push(arguments)},trigger:function(){this.t.push(arguments)}};var a=!1,i=e.createElement('script');i.async=!0,i.type='text/javascript',i.src='https://app.artibot.ai/loader.js',e.getElementsByTagName('head').item(0).appendChild(i),i.onreadystatechange=i.onload=function(){if(!(a||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState)){new window.ArtiBot({i:'10b60f1d-af20-48f5-8fe2-d77ec70d0158'});a=!0}}}(window,document);"
       document.body.appendChild(script)
 
       return () => {
@@ -134,13 +134,13 @@ export default function Contact() {
     }, [setViewHeight])
     return (
         <PageContainer vh={viewHeight}>
-          <NavBar black style={{zIndex: "1000"}}/>
+          <NavBar style={{zIndex: "1000"}}/>
           <BackgroundContainer />
           <TextContainer>
             <Link to="/">
               <Logo vh={viewHeight}/>
             </Link>
-            <p>Make it yours</p>
+            <p>It's your space</p>
             <ContactButton className="artibot-button-expand">QUOTE</ContactButton>
             <FooterTextContainer>
                 <h2 style={{ fontSize: "2.5rem" }}>505 Talbot St. E. Aylmer, ON</h2>

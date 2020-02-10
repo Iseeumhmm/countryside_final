@@ -115,13 +115,14 @@ const ViewStackContainer = styled.div`
 `
 
 export default function Pools() {
-    const { contentfulImages } = useRouteData()
+    const  pageImages  = useRouteData()
     const [ divWidth, setDivWidth ] = useState(null)
     const [ instagramFeed, setInstagramFeed ] = useState(null)
     const getWidth = (ele) => {
         setDivWidth(ele)
     }
     useEffect(() => {
+        console.log("contentful: ", pageImages)
         let element = document.getElementById("view-pager-container").offsetWidth
         getWidth(element)
         window.addEventListener( 'resize', getWidth(element) );
@@ -146,14 +147,14 @@ export default function Pools() {
                 <ContentContainer>
                     <div className="grid">
                     <TextContainer id="one">
-                        <h1>Your London Pool Builder</h1>
+                        <h1>Your London &amp; Area Pool Builder</h1>
                         <p>We install quality fiberglass in ground swimming pools, fiberglass plunge pools, fiberglass lap pools and water features in and around London Ontario. We are a trusted landscape company with the experience, knowledge and staff to create your landscape dream safely, efficiently and affordably.
                         </p>
                         <a href={catalogue} download>Download Pool Catalogue</a>
                     </TextContainer>
                     <TextContainer id="two">
                         <ViewStackContainer id="view-pager-container">
-                            { divWidth ? <ViewStack width={divWidth} slideType="contentful" slideImages={contentfulImages}/> : ""}
+                            { divWidth ? <ViewStack width={divWidth} slideType="contentful" slideImages={pageImages}/> : ""}
                         </ViewStackContainer>
                     </TextContainer>
                     <TextContainer id="three">

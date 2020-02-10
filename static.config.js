@@ -1,32 +1,23 @@
 import path from 'path'
-// import axios from 'axios'
-import fetchHomePageImages from './src/contentful/fetchHomePageImages'
-import fetchWorkImages from './src/contentful/fetchWorkImages'
-import fetchOurStoryContent from './src/contentful/fetchOurStoryContent.js'
-
+import fetchContentfulImages from './src/contentful/fetchContentfulImages'
 
 export default {
   getRoutes: async () => {
-    const homePageSliderImages = await fetchHomePageImages()
-    const contentfulImages = await fetchWorkImages()
-    const ourStoryContent = await fetchOurStoryContent()
+    const contentfulImages = await fetchContentfulImages()
     let page = (key) => {
-      let pageImages = [ key, contentfulImages[key] ]
+      let pageImages = [[ key, contentfulImages['singles'][key]], [ key, contentfulImages['drilldown'][key] ]]
       return pageImages
     }
+
     return [
       {
         path: '/',
-        getData: () => ({
-          homePageSliderImages
-        })
+        getData: () =>  contentfulImages['homePage']
       },
       {
         path: '/about',
         template: 'src/pages/about.js',
-        getData: () => ({
-          ourStoryContent
-        })
+        getData: () => contentfulImages['ourStory'].items
       },
       {
         path: '/contact',
@@ -35,9 +26,7 @@ export default {
       {
         path: '/pool-installs',
         template: 'src/pages/pools.js',
-        getData: () => ({
-          contentfulImages
-        })
+        getData: () => contentfulImages['singles']
       },
       {
         path: '/pools',
@@ -68,58 +57,10 @@ export default {
         path: '/woodworking',
         template: 'src/pages/services.js',
         getData: () => page("woodworking")
-      },
-      // // {
-      // //   path: '/pools/single',
-      // //   template: 'src/pages/drilldown.js',
-      // //   getData: () => page("pools")
-      // // },
-      // // {
-      // //   path: '/stonework/single',
-      // //   template: 'src/pages/drilldown.js',
-      // //   getData: () => page("stonework")
-      // // },
-      // // {
-      // //   path: '/retainingwalls/single',
-      // //   template: 'src/pages/drilldown.js',
-      // //   getData: () => page("retainingwalls")
-      // // },
-      // // {
-      // //   path: '/structures/single',
-      // //   template: 'src/pages/drilldown.js',
-      // //   getData: () => page("structures")
-      // // },
-      // // {
-      // //   path: '/woodworking/single',
-      // //   template: 'src/pages/drilldown.js',
-      // //   getData: () => page("woodworking")
-      // // },
-      // // {
-      // //   path: '/woodworking/single',
-      // //   template: 'src/pages/drilldown.js',
-      // //   getData: () => page("woodworking")
-      // // },
-      // {
-      //   path: '/Blog',
-      //   template: 'src/pages/blog.js',
-      //   // getData: () => page("woodworking")
-      // },
-      // {
-      //   path: '/blog',
-      //   getData: () => ({
-      //     images
-      //   }),
-      //   children: images.map(image => ({
-      //     path: `/post/${image.id}`,
-      //     template: 'src/containers/Post',
-      //     getData: () => ({
-      //       image,
-      //     }),
-      //   })),
-      // },
+      }
     ]
   },
-  siteRoot: 'https://countrysidelandscape.ca',
+  siteRoot: 'https://countryside.rickheffren.com',
   webpack: (config, { stage }) => {
     if (stage === 'prod') {
       config.entry = ['babel-polyfill', config.entry]
