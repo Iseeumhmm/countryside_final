@@ -28,14 +28,14 @@ const ViewPagerContainer = styled.div`
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     will-change: transform;
   }
   .split_page {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     @media( max-width: 1140px ){
       flex-flow: column-reverse nowrap;
     }
