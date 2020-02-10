@@ -12,10 +12,15 @@ const ViewPagerContainer = styled.div`
   display: flex;
   height: 100%;
   overflow: hidden;
+  #project_description {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
   .main {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     will-change: transform;
   }
   .picture {
@@ -89,6 +94,7 @@ export default function Viewpager(props) {
         >
           <div className={ props.projects[i].title ? "split_page" : "" }>
             <div 
+              id="project_description"
               className={ props.projects[i].title ? "left" : "" } 
               style={{ display: props.projects[i].title ? "flex" : "none" }}
               >
