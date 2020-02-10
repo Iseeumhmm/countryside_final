@@ -32,6 +32,9 @@ li {
     a { 
         display: block;
         margin: 5.2rem 0; 
+        @media( max-width: 1295px ) {
+            margin-bottom: 2rem;
+        }
     }
 }
 @media( min-width: 675px ) {

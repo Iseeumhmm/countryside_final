@@ -1,17 +1,22 @@
 import React, { useEffect, useState} from 'react'
 import { Link } from 'components/Router'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { useRouteData } from 'react-static'
 import NavBar from '../containers/navigation/navbar'
 import ViewStack from '../containers/springs/view-pager'
 import instagram from '../components/helperFuncrtions/getInstagram'
 import FooterNav from '../containers/navigation/footerNav'
 import TextContainer from '../containers/pools/TextContainer'
-const background = require('../images/backgrounds/poolPage.jpg')
-const backgroundLarge = require('../images/backgrounds/poolPage_2360.jpg')
+import catalogue from '../../public/Leisure Pools Consumer Brochure 2019-0424.pdf'
+import background from '../images/backgrounds/poolPage.jpg'
+import backgroundLarge from '../images/backgrounds/poolPage_2360.jpg'
+import logo from '../images/logos/LargeLogoBlack.png'
 
-const logo = require('../images/logos/LargeLogoBlack.png')
-const catalogue = require('../../public/Leisure Pools Consumer Brochure 2019-0424.pdf')
+const animateCatalogue = keyframes`
+0%      { color: #8AD30D; }
+50%    { color: #E6AD65; }
+100%    { color: #8AD30D; }
+`
 
 const PageContainer = styled.div`
     background-color: ${({theme: {poolPageBackground}}) => poolPageBackground };
@@ -19,6 +24,11 @@ const PageContainer = styled.div`
     max-width: 2300px;
     position: relative;
     margin: auto;
+    #catalogue {
+        font-size: 2rem;
+        font-weight: 700;
+        animation: ${animateCatalogue} 2s ease-in-out infinite;
+    }
 `
 const BackgroundContainer = styled.div`
 width: 100vw;
@@ -150,7 +160,7 @@ export default function Pools() {
                         <h1>Your London &amp; Area Pool Builder</h1>
                         <p>We install quality fiberglass in ground swimming pools, fiberglass plunge pools, fiberglass lap pools and water features in and around London Ontario. We are a trusted landscape company with the experience, knowledge and staff to create your landscape dream safely, efficiently and affordably.
                         </p>
-                        <a href={catalogue} download>Download Pool Catalogue</a>
+                        <a id="catalogue" href={catalogue} download>Download Pool Catalogue</a>
                     </TextContainer>
                     <TextContainer id="two">
                         <ViewStackContainer id="view-pager-container">
