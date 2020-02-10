@@ -12,6 +12,7 @@ const logo = require('../images/logos/LargeLogo.png')
 const PageContainer = styled.div`
     position: relative;
     overflow-x: hidden;
+    overflow-y: hidden;
     display: flex;
     flex-flow: column nowrap;
     width: 100vw;
