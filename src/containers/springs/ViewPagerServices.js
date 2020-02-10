@@ -93,6 +93,7 @@ export default function Viewpager(props) {
               >
                 <h1>{props.projects[i]['title']}</h1>
                 <p>{props.projects[i]['description']}</p>
+                { (props.windowWidth > 1140) ? <p>{props.projects[i]['descriptionExtended']}</p> : "" }
             </div>
             <animated.div 
               style={{backgroundImage: `url(${props.projects[i]['image']}`}}

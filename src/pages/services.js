@@ -16,7 +16,6 @@ const PageContainer = styled.div`
     flex-flow: column nowrap;
     width: 100vw;
     height: 100vh;
-    /* min-height: ${ ({height}) => height }px; */
     h1 {color: ${({theme: {darkGrey}}) => darkGrey}; }
     h3 {
         color: ${({theme: {darkGrey}}) => darkGrey};
@@ -54,11 +53,11 @@ const Services = () => {
     const pageImages = useRouteData()
     const [images, setImages] = useState(null)
     const [projects, setProjects] = useState(null)
-    const [winHeight, setWinHeight] = useState(null)
+    const [winWidth, setWinWidth] = useState(null)
 
     // const [loaded, setLoaded] = useState(false)
     useEffect(() => {
-        // setWinHeight(window.innerHeight)
+        setWinWidth(window.innerWidth)
         let imageArray = []
         if (pageImages[0][1]) { pageImages[0][1].forEach( each => {
             let image = {
@@ -77,6 +76,7 @@ const Services = () => {
                 if ( i === 0 ) {
                     image.title = each.title
                     image.description = each.description
+                    image.descriptionExtended = each.descriptionExtended
                     image.image = `${each.image[i].fields.file.url}?w=1920&q=40&fl=progressive`
                 } else {
                     image.title = null
@@ -102,7 +102,7 @@ const Services = () => {
                 <Link to="/"><Logo /></Link>
             </HeaderContainer>
             <NavBar style={{zIndex: "1000"}}/>
-            { projects ? <ViewPager id="view_pager" images={pageImages[0]} projects={projects}/> : null}
+            { projects ? <ViewPager id="view_pager" windowWidth={winWidth} images={pageImages[0]} projects={projects}/> : null}
         </PageContainer>
     )
 
