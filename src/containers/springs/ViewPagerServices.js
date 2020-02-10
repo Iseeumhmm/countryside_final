@@ -29,8 +29,7 @@ const ViewPagerContainer = styled.div`
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
-    height: ${ ({width}) => width > 1140 ? "100%" :  "50%"};
-    /* height: ${ ({ height }) => height}px; */
+    height: ${ ({ height }) => height}px;
     will-change: transform;
   }
   .split_page {
