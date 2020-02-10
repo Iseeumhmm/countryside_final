@@ -28,14 +28,14 @@ const ViewPagerContainer = styled.div`
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
-    height: 100%;
+    height: ${ ({ height }) => height}px;
     will-change: transform;
   }
   .split_page {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
-    height: 100%;
+    height: ${ ({ height }) => height}px;
     @media( max-width: 1140px ){
       flex-flow: column-reverse nowrap;
     }
@@ -112,7 +112,7 @@ export default function Viewpager(props) {
       </animated.div>
   ))
   return (
-    <ViewPagerContainer id="view-pager" width={props.windowWidth}>
+    <ViewPagerContainer id="view-pager" width={window.innerWidth} height={window.innerHeight}>
         {viewPagerItems}
     </ViewPagerContainer>
   )

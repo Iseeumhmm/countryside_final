@@ -24,7 +24,7 @@ const PageContainer = styled.div`
     .full_page {
         display: none;
         width: 100%;
-        height: 100vh;
+        height: ${ ({ height }) => height}px;
         border: 3px solid blue;
     }
 `
@@ -54,15 +54,9 @@ const Services = () => {
     const pageImages = useRouteData()
     const [images, setImages] = useState(null)
     const [projects, setProjects] = useState(null)
-    const [winWidth, setWinWidth] = useState(null)
-    const [winHeight, setWinHeight] = useState(null)
-
 
     // const [loaded, setLoaded] = useState(false)
     useEffect(() => {
-        setWinWidth(window.innerWidth)
-        setWinHeight(window.innerHeight)
-
         let imageArray = []
         if (pageImages[0][1]) { pageImages[0][1].forEach( each => {
             let image = {
@@ -97,7 +91,7 @@ const Services = () => {
     // }
 
     return (
-        <PageContainer height={winHeight}>
+        <PageContainer height={window.innerHeight}>
             <Head>
                 {images ? images.map( (each, i) => {
                     return <link key={`${i}_link`} rel="preload" as="image" href={each.image}/>
@@ -107,7 +101,7 @@ const Services = () => {
                 <Link to="/"><Logo /></Link>
             </HeaderContainer>
             <NavBar style={{zIndex: "1000"}}/>
-            { projects ? <ViewPager id="view_pager" windowWidth={winWidth} windowHeigth={winHeight} images={pageImages[0]} projects={projects}/> : null}
+            { projects ? <ViewPager id="view_pager" images={pageImages[0]} projects={projects}/> : null}
         </PageContainer>
     )
 
