@@ -47,12 +47,13 @@ const ViewPagerContainer = styled.div`
     }
     @media( max-width: 1140px ){
       width: 100%;
-      height: 67%;
+      height: 100%;
     }
   }
   .right{
     width: 67%;
-    height: 100%;
+    height: ${ ({width}) => width > 1140 ? "100%" :  "50%"};
+    /* height: 100%; */
     background-size: cover;
     background-position: center bottom;
     @media( max-width: 1140px ){
@@ -105,7 +106,7 @@ export default function Viewpager(props) {
       </animated.div>
   ))
   return (
-    <ViewPagerContainer id="view-pager">
+    <ViewPagerContainer id="view-pager" width={props.windowWidth}>
         {viewPagerItems}
     </ViewPagerContainer>
   )
