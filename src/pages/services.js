@@ -10,9 +10,11 @@ const logo = require('../images/logos/LargeLogo.png')
 //Styles
 
 const PageContainer = styled.div`
+    position: relative;
+    overflow-x: hidden;
     display: flex;
     flex-flow: column nowrap;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     h1 {color: ${({theme: {darkGrey}}) => darkGrey}; }
     h3 {
@@ -97,7 +99,7 @@ const Services = () => {
                 <Link to="/"><Logo /></Link>
             </HeaderContainer>
             <NavBar style={{zIndex: "1000"}}/>
-            { projects ? <ViewPager images={pageImages[0]} projects={projects}/> : null}
+            { projects ? <ViewPager id="view_pager" images={pageImages[0]} projects={projects}/> : null}
         </PageContainer>
     )
 
