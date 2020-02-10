@@ -147,7 +147,7 @@ export default function Pools() {
                 <ContentContainer>
                     <div className="grid">
                     <TextContainer id="one">
-                        <h1>Your London Pool Builder</h1>
+                        <h1>Your London &amp; Area Pool Builder</h1>
                         <p>We install quality fiberglass in ground swimming pools, fiberglass plunge pools, fiberglass lap pools and water features in and around London Ontario. We are a trusted landscape company with the experience, knowledge and staff to create your landscape dream safely, efficiently and affordably.
                         </p>
                         <a href={catalogue} download>Download Pool Catalogue</a>

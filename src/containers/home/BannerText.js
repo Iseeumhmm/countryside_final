@@ -41,7 +41,7 @@ export default function Banner(props) {
         <React.Fragment>
             <Logo />
             <TextContainer>
-                <h1>Your London Pool Builder</h1>
+                <h1>Your London &amp; Area Pool Builder</h1>
                 <BannerNav />
             </TextContainer>
         </React.Fragment>
