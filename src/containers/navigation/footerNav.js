@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'components/Router'
 import styled from 'styled-components'
+import Event from '../../components/helperFuncrtions/AnalyticsEvents'
 
 const FooterNavContainer = styled.div`
     position: relative;
@@ -46,10 +47,10 @@ const FooterNav = (props) => {
     return (
         <FooterNavContainer id="footer" light={props.light}>
             <ul>
-                <li style={ props.contact ? {display: "none"} : null }><Link to="/contact">Contact</Link></li>
-                <li style={ props.pools ? {display: "none"} : null }><Link to="/pools">Pool Gallery</Link></li>
-                <li style={ props.ourWork ? {display: "none"} : null }><Link to="/pool-installs">Our Work</Link></li>
-                <li style={ props.ourStory ? {display: "none"} : null }><Link to="/about">Our Story</Link></li>
+                <li style={ props.contact ? {display: "none"} : null }><Link to="/contact" onClick={ () => Event("Footer Menu - Contact") }>Contact</Link></li>
+                <li style={ props.pools ? {display: "none"} : null }><Link to="/pools" onClick={ () => Event("Footer Menu - Pool Gallery") }>Pool Gallery</Link></li>
+                <li style={ props.ourWork ? {display: "none"} : null }><Link to="/pool-installs" onClick={ () => Event("Footer Menu - Our Work") }>Our Work</Link></li>
+                <li style={ props.ourStory ? {display: "none"} : null }><Link to="/about" onClick={ () => Event("Footer Menu - Our Story") }>Our Story</Link></li>
 
             </ul>
             <a href="https://auana.ca" className="auana">Website by AUANA DIGITAL</a>

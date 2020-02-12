@@ -1,5 +1,4 @@
-import "babel-polyfill";
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactGA from 'react-ga';
 import { Root, Routes, addPrefetchExcludes, Head } from 'react-static'
 import { Router } from 'components/Router'
@@ -22,9 +21,6 @@ const theme = {
   highlight: "#8AD30D",
   // highlightSecondary: "#C5893D",
   highlightSecondary: "#E6AD65",
-
-
-
 
   // Pool Page
   poolPageBackground: "#2C5E7E", 
@@ -129,8 +125,12 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function App() {
-  const trackingId = "UA-153961441-2"; 
-  ReactGA.initialize(trackingId);
+
+  useEffect(() => {
+    const trackingId = "UA-153961441-2"; 
+    ReactGA.initialize(trackingId);
+  },[])
+  
   return (
     <Root>
       <Head>
@@ -142,7 +142,7 @@ function App() {
           <meta property="og:url" content="https://countrysidelandscape.ca" />
           <meta property="og:image" content="https://images.ctfassets.net/ur1u6ni4z1cg/27XoXJe8sqHgerkKcPd41w/98b1cf252e9c5aa2196918471bbb714e/pool3edited.jpg" />
           <meta property="og:image:secure_url" content="https://images.ctfassets.net/ur1u6ni4z1cg/27XoXJe8sqHgerkKcPd41w/98b1cf252e9c5aa2196918471bbb714e/pool3edited.jpg" />
-          <title>Your London Pool Builder</title>
+          <title>Your London & Area Pool Builder</title>
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'components/Router'
 import '../artibot.css'
 import NavBar from '../containers/navigation/navbar'
+import Event from '../components/helperFuncrtions/AnalyticsEvents'
 import logo from '../images/logos/LargeLogoBlack.png'
 import Background from '../images/backgrounds/contact.jpg'
 import BackgroundLarge from '../images/backgrounds/contactLarge.jpg'
@@ -84,6 +85,12 @@ const ContactButton = styled.button`
   z-index: 200;
   width: 11rem;
   height: 4rem;
+  &:hover {
+    transform: scale(1.2)
+  }
+  &:focus {
+    outline: none;
+  }
   @media(min-width: 1575px){
     background-color: ${({ theme: {highlight} }) => highlight };
   }
@@ -144,8 +151,8 @@ export default function Contact() {
             <ContactButton className="artibot-button-expand">QUOTE</ContactButton>
             <FooterTextContainer>
                 <h2 style={{ fontSize: "2.5rem" }}>505 Talbot St. E. Aylmer, ON</h2>
-                <h2 style={{textAlign: "left"}}>VINCE<a href="tel: 519-403-5699" style={{float: "right"}}>(519) 403-5699</a></h2>
-                <h2 style={{textAlign: "left"}}>JOHN<a href="tel: 519-619-9593" style={{float: "right"}}>(519) 619-9593</a></h2>
+                <h2 style={{textAlign: "left"}}>VINCE<a onClick={ () => Event("Contact Phone - Vince") } href="tel: 519-403-5699" style={{float: "right"}}>(519) 403-5699</a></h2>
+                <h2 style={{textAlign: "left"}}>JOHN<a onClick={ () => Event("Contact Phone - John") } href="tel: 519-619-9593" style={{float: "right"}}>(519) 619-9593</a></h2>
             </FooterTextContainer>
           </TextContainer>
         </PageContainer>
