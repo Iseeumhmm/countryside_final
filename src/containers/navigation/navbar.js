@@ -47,10 +47,11 @@ const StyledMenu = styled.nav`
 const Menu = ({ open, setOpen }) => {
   return (
     <StyledMenu open={open}>
-        <Link to="/" onClick={() => setOpen(!open)}>Home</Link>
-        <Link to="/pool-installs" onClick={() => setOpen(!open)}>Our Work</Link>
-        <Link to="/about">Our Story</Link>
-        <Link to="/contact" onClick={() => setOpen(!open)}>Contact Us</Link>
+        <Link ga-on="click" ga-event-category="MenuHome" to="/" onClick={() => setOpen(!open)}>Home</Link>
+        <Link ga-on="click" ga-event-category="MenuPoolGallery" to="/pools" onClick={() => setOpen(!open)}>Pool Gallery</Link>
+        <Link ga-on="click" ga-event-category="MenuOurWork" to="/pool-installs" onClick={() => setOpen(!open)}>Our Work</Link>
+        <Link ga-on="click" ga-event-category="MenuOurStory" to="/about">Our Story</Link>
+        <Link ga-on="click" ga-event-category="MenuContact" to="/contact" onClick={() => setOpen(!open)}>Contact Us</Link>
     </StyledMenu>
   )
 }

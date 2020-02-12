@@ -131,6 +131,53 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   const trackingId = "UA-153961441-2"; 
   ReactGA.initialize(trackingId);
+  ReactGA.set({
+    time: new Date()
+  })
+  ReactGA.event({
+    category: "MenuHome",
+    action: "MenuHome"
+  })
+  ReactGA.event({
+    category: "MenuPoolGallery",
+    action: "MenuPoolGallery"
+  })
+  ReactGA.event({
+    category: "MenuOurWork",
+    action: "MenuOurWork"
+  })
+  ReactGA.event({
+    category: "MenuOurStory",
+    action: "MenuOurStory"
+  })
+  ReactGA.event({
+    category: "MenuContact",
+    action: "MenuContact"
+  })
+  ReactGA.event({
+    category: "FooterContact",
+    action: "FooterContact"
+  })
+  ReactGA.event({
+    category: "FooterGallery",
+    action: "FooterPoolGallery"
+  })
+  ReactGA.event({
+    category: "FooterOurWork",
+    action: "FooterOurWork"
+  })
+  ReactGA.event({
+    category: "FooterOurStory",
+    action: "FooterOurStory"
+  })
+  ReactGA.event({
+    category: "PoolCatalogue",
+    action: "PoolCatalogue"
+  })
+  ReactGA.event({
+    category: "OurWorkServicesSlider",
+    action: "OurWorkServicesSlider"
+  })
   return (
     <Root>
       <Head>
@@ -142,7 +189,7 @@ function App() {
           <meta property="og:url" content="https://countrysidelandscape.ca" />
           <meta property="og:image" content="https://images.ctfassets.net/ur1u6ni4z1cg/27XoXJe8sqHgerkKcPd41w/98b1cf252e9c5aa2196918471bbb714e/pool3edited.jpg" />
           <meta property="og:image:secure_url" content="https://images.ctfassets.net/ur1u6ni4z1cg/27XoXJe8sqHgerkKcPd41w/98b1cf252e9c5aa2196918471bbb714e/pool3edited.jpg" />
-          <title>Your London Pool Builder</title>
+          <title>Your London & Area Pool Builder</title>
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />

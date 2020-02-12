@@ -5,7 +5,7 @@ import { useRouteData, Head } from 'react-static'
 import ViewPager from '../containers/springs/ViewPagerServices'
 import styled from 'styled-components'
 // import Fade from 'react-reveal/Fade';
-const logo = require('../images/logos/LargeLogo.png')
+import logo from'../images/logos/LargeLogo.png'
 
 //Styles
 

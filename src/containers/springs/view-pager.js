@@ -108,7 +108,7 @@ export default function Viewpager(propsFrom) {
   const viewPagerItems = props.map(({ x, display, sc }, i) => (
     <animated.div {...bind()} key={ids.generate()} style={{ transform: x.interpolate(x => `translate3d(${x}px,0,0)`) }}>
 
-      {passedType === "contentful" ? <Link key={`${i}_link`} to={passedType === "contentful" ? `/${pages[i][0]}` : "/pool-installs"}>
+      {passedType === "contentful" ? <Link ga-on="click" ga-event-category="OurWorkServicesSlider" key={`${i}_link`} to={passedType === "contentful" ? `/${pages[i][0]}` : "/pool-installs"}>
         <h2 style={{textAlign: "center", textTransform: "capitalize", textDecoration: "underline"}}>{pages[i][0]}</h2>
       </Link>  : null }
       {passedType === "instagram" ? <h2>Swipe through our Instagram Feed!</h2> : null }

@@ -46,10 +46,10 @@ const FooterNav = (props) => {
     return (
         <FooterNavContainer id="footer" light={props.light}>
             <ul>
-                <li style={ props.contact ? {display: "none"} : null }><Link to="/contact">Contact</Link></li>
-                <li style={ props.pools ? {display: "none"} : null }><Link to="/pools">Pool Gallery</Link></li>
-                <li style={ props.ourWork ? {display: "none"} : null }><Link to="/pool-installs">Our Work</Link></li>
-                <li style={ props.ourStory ? {display: "none"} : null }><Link to="/about">Our Story</Link></li>
+                <li style={ props.contact ? {display: "none"} : null }><Link ga-on="click" ga-event-category="FooterContact" to="/contact">Contact</Link></li>
+                <li style={ props.pools ? {display: "none"} : null }><Link ga-on="click" ga-event-category="FooterPoolGallery" to="/pools">Pool Gallery</Link></li>
+                <li style={ props.ourWork ? {display: "none"} : null }><Link ga-on="click" ga-event-category="FooterOurWork" to="/pool-installs">Our Work</Link></li>
+                <li style={ props.ourStory ? {display: "none"} : null }><Link ga-on="click" ga-event-category="FooterOurStory" to="/about">Our Story</Link></li>
 
             </ul>
             <a href="https://auana.ca" className="auana">Website by AUANA DIGITAL</a>
