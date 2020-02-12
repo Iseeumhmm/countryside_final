@@ -125,12 +125,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function App() {
-
-  useEffect(() => {
-    const trackingId = "UA-153961441-2"; 
-    ReactGA.initialize(trackingId);
-  },[])
-  
   return (
     <Root>
       <Head>

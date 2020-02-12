@@ -63,6 +63,8 @@ function Home() {
     setViewHeight(ele)
   }
   useEffect( () => {
+    const trackingId = "UA-153961441-2"; 
+    ReactGA.initialize(trackingId);
     ReactGA.set({ page: window.location.pathname });
     ReactGA.pageview(window.location.pathname)
     let toPreload = []
