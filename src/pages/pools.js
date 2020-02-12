@@ -132,7 +132,6 @@ export default function Pools() {
         setDivWidth(ele)
     }
     useEffect(() => {
-        console.log("contentful: ", pageImages)
         let element = document.getElementById("view-pager-container").offsetWidth
         getWidth(element)
         window.addEventListener( 'resize', getWidth(element) );
