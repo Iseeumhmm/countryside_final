@@ -135,7 +135,7 @@ function App() {
     <Root>
       <Head>
           <meta property="og:locale" content="en_CA" />
-          <meta property="og:title" content="Your London Pool Buider" />
+          <meta property="og:title" content="Your London & Area Pool Buider" />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Countryside Landscape and Pools" />
           <meta property="og:description" content="We install quality in-ground swimming pools, lap pools and water features in the London Ontario area" />

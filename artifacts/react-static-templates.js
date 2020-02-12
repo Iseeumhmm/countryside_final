@@ -8,6 +8,7 @@ export default {
 '/Users/rickheffren/Documents/WebDevelopment/CountrysideTesting/src/pages/contact.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideTesting/src/pages/contact.js').default,
 '/Users/rickheffren/Documents/WebDevelopment/CountrysideTesting/src/pages/index.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideTesting/src/pages/index.js').default,
 '/Users/rickheffren/Documents/WebDevelopment/CountrysideTesting/src/pages/services.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideTesting/src/pages/services.js').default,
+'/Users/rickheffren/Documents/WebDevelopment/CountrysideTesting/src/pages/warranty.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideTesting/src/pages/warranty.js').default,
 '/Users/rickheffren/Documents/WebDevelopment/CountrysideTesting/src/pages/pools.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideTesting/src/pages/pools.js').default
 }
 

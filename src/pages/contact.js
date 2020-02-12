@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { Link } from 'components/Router'
 import '../artibot.css'
 import NavBar from '../containers/navigation/navbar'
-const logo = require('../images/logos/LargeLogoBlack.png')
-const Background = require('../images/backgrounds/contact.jpg')
-const BackgroundLarge = require('../images/backgrounds/contactLarge.jpg')
+import logo from '../images/logos/LargeLogoBlack.png'
+import Background from '../images/backgrounds/contact.jpg'
+import BackgroundLarge from '../images/backgrounds/contactLarge.jpg'
 
 
-// Styles
+// Style
 
 const PageContainer = styled.div`
   position: fixed;

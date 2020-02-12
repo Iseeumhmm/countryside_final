@@ -6,9 +6,9 @@ import Markdown from 'react-markdown'
 import NavBar from '../containers/navigation/navbar'
 import FooterNav from '../containers/navigation/footerNav'
 // require('../components/lazyLoad.js')
-const background = require('../images/backgrounds/about.jpg')
-const backgroundLarge = require('../images/backgrounds/aboutLarge.jpg')
-const logo = require('../images/logos/LargeLogoBlack.png')
+import background from '../images/backgrounds/about.jpg'
+import backgroundLarge from '../images/backgrounds/aboutLarge.jpg'
+import  logo from'../images/logos/LargeLogoBlack.png'
 
 // Styles
 const PageContainer = styled.div`

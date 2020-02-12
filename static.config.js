@@ -24,6 +24,10 @@ export default {
         template: 'src/pages/contact.js'
       },
       {
+        path: '/warranty',
+        template: 'src/pages/warranty.js',
+      },
+      {
         path: '/pool-installs',
         template: 'src/pages/pools.js',
         getData: () => contentfulImages['singles']

@@ -68,8 +68,7 @@ const StyledBurger = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 52;
-
+  z-index: 6000;
 
   &:focus {
     outline: none;
@@ -83,6 +82,7 @@ const StyledBurger = styled.button`
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
+    z-index: 5500;
 
     :first-child {
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};

@@ -24,8 +24,11 @@ const FooterNavContainer = styled.div`
         li {
             display: inline-block;
         }
-        li:first-child {
+        li {
             padding-right: 5.2rem;
+        }
+        li:nth-child(3), li:nth-child(4) {
+            padding-right: 0;
         }
     }
     .auana {
@@ -44,8 +47,10 @@ const FooterNav = (props) => {
         <FooterNavContainer id="footer" light={props.light}>
             <ul>
                 <li style={ props.contact ? {display: "none"} : null }><Link to="/contact">Contact</Link></li>
-                <li style={ props.ourStory ? {display: "none"} : null }><Link to="/about">Our Story</Link></li>
+                <li style={ props.pools ? {display: "none"} : null }><Link to="/pools">Pool Gallery</Link></li>
                 <li style={ props.ourWork ? {display: "none"} : null }><Link to="/pool-installs">Our Work</Link></li>
+                <li style={ props.ourStory ? {display: "none"} : null }><Link to="/about">Our Story</Link></li>
+
             </ul>
             <a href="https://auana.ca" className="auana">Website by AUANA DIGITAL</a>
         </FooterNavContainer>
