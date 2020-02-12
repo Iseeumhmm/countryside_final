@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { useRouteData } from 'react-static'
+import ReactGA from 'react-ga'
 import KenBurns from '../containers/springs/ken-burns/kenBurns'
 import BrowserDetection from 'react-browser-detection';
 import BannerText from '../containers/home/BannerText'
@@ -62,6 +63,8 @@ function Home() {
     setViewHeight(ele)
   }
   useEffect( () => {
+    ReactGA.set({ page: window.location.pathname });
+    ReactGA.pageview(window.location.pathname)
     let toPreload = []
     homePageSliderImages.items.forEach( link => {
         toPreload.push([ `${link}?w=1920&q=40&fl=progressive` ])

@@ -22,9 +22,6 @@ const theme = {
   // highlightSecondary: "#C5893D",
   highlightSecondary: "#E6AD65",
 
-
-
-
   // Pool Page
   poolPageBackground: "#2C5E7E", 
   lineHeight: "2.6rem"
@@ -132,11 +129,6 @@ function App() {
   useEffect(() => {
     const trackingId = "UA-153961441-2"; 
     ReactGA.initialize(trackingId);
-   
-    // ReactGA.event({
-    //   category: "OurWorkServicesSlider",
-    //   action: "OurWorkServicesSlider"
-    // })
   },[])
   
   return (
