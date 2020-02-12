@@ -1,6 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'components/Router'
+import Event from '../../components/helperFuncrtions/AnalyticsEvents'
+import styled from 'styled-components'
 
 
 const NavList = styled.ul`
@@ -26,7 +27,7 @@ export default function BannerNav(props) {
    
     return (
         <NavList secondary={props.secondary}>
-            <li><Link to="/about">OUR STORY</Link></li>
+            <li><Link to="/about" onClick={ () => Event("Home Center Nav - Our Story") }>OUR STORY</Link></li>
             <li style={{
                 fontSize: "2rem", 
                 marginTop: "-.1rem", 
@@ -34,6 +35,7 @@ export default function BannerNav(props) {
                 }}>
                 <Link 
                     to="/pool-installs"
+                    onClick={ () => Event("Home Center Nav - Our Work") }
                     ga-on="click"
                     ga-event-category="our-work"
                     style={{
@@ -42,7 +44,7 @@ export default function BannerNav(props) {
                     >OUR WORK
                 </Link>
             </li>
-            <li><Link to="/contact">CONTACT</Link></li>
+            <li><Link to="/contact" onClick={ () => Event("Home Center Nav - Contact") }>CONTACT</Link></li>
         </NavList>
     )
 }

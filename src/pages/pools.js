@@ -7,6 +7,7 @@ import ViewStack from '../containers/springs/view-pager'
 import instagram from '../components/helperFuncrtions/getInstagram'
 import FooterNav from '../containers/navigation/footerNav'
 import TextContainer from '../containers/pools/TextContainer'
+import Event from '../components/helperFuncrtions/AnalyticsEvents'
 import catalogue from '../../public/Leisure Pools Consumer Brochure 2019-0424.pdf'
 import background from '../images/backgrounds/poolPage.jpg'
 import backgroundLarge from '../images/backgrounds/poolPage_2360.jpg'
@@ -159,7 +160,7 @@ export default function Pools() {
                         <h1>Your London &amp; Area Pool Builder</h1>
                         <p>We install quality fiberglass in ground swimming pools, fiberglass plunge pools, fiberglass lap pools and water features in and around London Ontario. We are a trusted landscape company with the experience, knowledge and staff to create your landscape dream safely, efficiently and affordably.
                         </p>
-                        <a ga-on="click" ga-event-category="PoolCatalogue" id="catalogue" href={catalogue} download>Download Pool Catalogue</a>
+                        <a onClick={ () => Event("Our Work - Download Catalogue") } id="catalogue" href={catalogue} download>Download Pool Catalogue</a>
                     </TextContainer>
                     <TextContainer id="two">
                         <ViewStackContainer id="view-pager-container">

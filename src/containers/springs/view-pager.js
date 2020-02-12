@@ -3,7 +3,8 @@ import { Link } from 'components/Router'
 import clamp from 'lodash-es/clamp'
 import { useSprings, animated } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
-import styled from 'styled-components'
+import Event from '../../components/helperFuncrtions/AnalyticsEvents';
+import styled from 'styled-components';
 const swipe = require('../../images/icons/swipe-left.png')
 const poster = require('../../images/icons/instagram_video_poster.jpg')
 var ids = require('short-id')
@@ -105,10 +106,14 @@ export default function Viewpager(propsFrom) {
       return { x, sc, display: 'block' }
     })
   })
+
+  
+
+
   const viewPagerItems = props.map(({ x, display, sc }, i) => (
     <animated.div {...bind()} key={ids.generate()} style={{ transform: x.interpolate(x => `translate3d(${x}px,0,0)`) }}>
 
-      {passedType === "contentful" ? <Link ga-on="click" ga-event-category="OurWorkServicesSlider" key={`${i}_link`} to={passedType === "contentful" ? `/${pages[i][0]}` : "/pool-installs"}>
+      {passedType === "contentful" ? <Link key={`${i}_link`} to={passedType === "contentful" ? `/${pages[i][0]}` : "/pool-installs"} onClick={ () => {Event(`Our Work - ${pages[i][0] ? pages[i][0] : ""} slider clicked`)} }>
         <h2 style={{textAlign: "center", textTransform: "capitalize", textDecoration: "underline"}}>{pages[i][0]}</h2>
       </Link>  : null }
       {passedType === "instagram" ? <h2>Swipe through our Instagram Feed!</h2> : null }

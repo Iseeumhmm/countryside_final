@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'components/Router'
+import Event from '../../components/helperFuncrtions/AnalyticsEvents'
 
 const StyledMenu = styled.nav`
   position: absolute;
@@ -47,11 +48,11 @@ const StyledMenu = styled.nav`
 const Menu = ({ open, setOpen }) => {
   return (
     <StyledMenu open={open}>
-        <Link ga-on="click" ga-event-category="MenuHome" to="/" onClick={() => setOpen(!open)}>Home</Link>
-        <Link ga-on="click" ga-event-category="MenuPoolGallery" to="/pools" onClick={() => setOpen(!open)}>Pool Gallery</Link>
-        <Link ga-on="click" ga-event-category="MenuOurWork" to="/pool-installs" onClick={() => setOpen(!open)}>Our Work</Link>
-        <Link ga-on="click" ga-event-category="MenuOurStory" to="/about">Our Story</Link>
-        <Link ga-on="click" ga-event-category="MenuContact" to="/contact" onClick={() => setOpen(!open)}>Contact Us</Link>
+        <Link to="/" onClick={() => { setOpen(!open); Event("Top Menu - Home") }}>Home</Link>
+        <Link to="/pools" onClick={() => { setOpen(!open); Event("Top Menu - Pool Gallery") }}>Pool Gallery</Link>
+        <Link to="/pool-installs" onClick={() => { setOpen(!open); Event("Top Menu - Our Work") }}>Our Work</Link>
+        <Link to="/about" onClick={() => { Event("Top Menu - Our Story") }} >Our Story</Link>
+        <Link to="/contact" onClick={() => { setOpen(!open); Event("Top Menu - Contact Us") }}>Contact Us</Link>
     </StyledMenu>
   )
 }
@@ -102,7 +103,7 @@ const StyledBurger = styled.button`
 
 const Burger = ({ black, open, setOpen }) => {
   return (
-    <StyledBurger black={black} style={{color: 'black'}} open={open} onClick={() => setOpen(!open)}>
+    <StyledBurger black={black} style={{color: 'black'}} open={open} onClick={() => { setOpen(!open); Event("Top Menu - Home")}}>
       <div />
       <div />
       <div />
