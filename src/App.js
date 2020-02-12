@@ -1,5 +1,4 @@
-import "babel-polyfill";
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactGA from 'react-ga';
 import { Root, Routes, addPrefetchExcludes, Head } from 'react-static'
 import { Router } from 'components/Router'
@@ -129,55 +128,59 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function App() {
-  const trackingId = "UA-153961441-2"; 
-  ReactGA.initialize(trackingId);
-  ReactGA.set({
-    time: new Date()
-  })
-  ReactGA.event({
-    category: "MenuHome",
-    action: "MenuHome"
-  })
-  ReactGA.event({
-    category: "MenuPoolGallery",
-    action: "MenuPoolGallery"
-  })
-  ReactGA.event({
-    category: "MenuOurWork",
-    action: "MenuOurWork"
-  })
-  ReactGA.event({
-    category: "MenuOurStory",
-    action: "MenuOurStory"
-  })
-  ReactGA.event({
-    category: "MenuContact",
-    action: "MenuContact"
-  })
-  ReactGA.event({
-    category: "FooterContact",
-    action: "FooterContact"
-  })
-  ReactGA.event({
-    category: "FooterGallery",
-    action: "FooterPoolGallery"
-  })
-  ReactGA.event({
-    category: "FooterOurWork",
-    action: "FooterOurWork"
-  })
-  ReactGA.event({
-    category: "FooterOurStory",
-    action: "FooterOurStory"
-  })
-  ReactGA.event({
-    category: "PoolCatalogue",
-    action: "PoolCatalogue"
-  })
-  ReactGA.event({
-    category: "OurWorkServicesSlider",
-    action: "OurWorkServicesSlider"
-  })
+
+  useEffect(() => {
+    const trackingId = "UA-153961441-2"; 
+    ReactGA.initialize(trackingId);
+    ReactGA.set({
+      time: new Date()
+    })
+    ReactGA.event({
+      category: "MenuHome",
+      action: "MenuHome"
+    })
+    ReactGA.event({
+      category: "MenuPoolGallery",
+      action: "MenuPoolGallery"
+    })
+    ReactGA.event({
+      category: "MenuOurWork",
+      action: "MenuOurWork"
+    })
+    ReactGA.event({
+      category: "MenuOurStory",
+      action: "MenuOurStory"
+    })
+    ReactGA.event({
+      category: "MenuContact",
+      action: "MenuContact"
+    })
+    ReactGA.event({
+      category: "FooterContact",
+      action: "FooterContact"
+    })
+    ReactGA.event({
+      category: "FooterGallery",
+      action: "FooterPoolGallery"
+    })
+    ReactGA.event({
+      category: "FooterOurWork",
+      action: "FooterOurWork"
+    })
+    ReactGA.event({
+      category: "FooterOurStory",
+      action: "FooterOurStory"
+    })
+    ReactGA.event({
+      category: "PoolCatalogue",
+      action: "PoolCatalogue"
+    })
+    ReactGA.event({
+      category: "OurWorkServicesSlider",
+      action: "OurWorkServicesSlider"
+    })
+  },[])
+  
   return (
     <Root>
       <Head>
