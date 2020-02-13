@@ -17,7 +17,8 @@ const PageContainer = styled.div`
   background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
-  background-color: ${ ({theme: {lightGrey}}) => lightGrey };
+  background-color: #FBFBFB;
+  /* background-color: ${ ({theme: {lightGrey}}) => lightGrey }; */
   color: ${ ({theme: {darkGrey}}) => darkGrey };
   max-width: 100%;
   overflow-x: hidden;
@@ -130,19 +131,19 @@ export default function About() {
         <h1 style={{textAlign: "center"}}>Our Story</h1>
       </div>
         <div style={{width: '100%', textAlign: 'center', paddingBottom: "3.2rem"}}>
-          <Photo src={`${ourStoryContent[1].headShotPhoto.fields.file.url}?w=300&fl=progressive`}/>
-          <h2>{ourStoryContent[1].name}</h2>
-        </div>
-        <Markdown source={ourStoryContent[1].bioText} />
-      </TextContainer>
-      <TextContainer>
-        <div style={{width: '100%', textAlign: 'center', padding: "3.2rem 0"}}>
           <Photo src={`${ourStoryContent[0].headShotPhoto.fields.file.url}?w=300&fl=progressive`}/>
-          {/* <lit-lazy-image id="img" alt="img" src={`${ourStoryContent[0].headShotPhoto.fields.file.url}?w=300&fl=progressive`}> */}
-          {/* </lit-lazy-image> */}
           <h2>{ourStoryContent[0].name}</h2>
         </div>
         <Markdown source={ourStoryContent[0].bioText} />
+      </TextContainer>
+      <TextContainer>
+        <div style={{width: '100%', textAlign: 'center', padding: "3.2rem 0"}}>
+          <Photo src={`${ourStoryContent[1].headShotPhoto.fields.file.url}?w=300&fl=progressive`}/>
+          {/* <lit-lazy-image id="img" alt="img" src={`${ourStoryContent[0].headShotPhoto.fields.file.url}?w=300&fl=progressive`}> */}
+          {/* </lit-lazy-image> */}
+          <h2>{ourStoryContent[1].name}</h2>
+        </div>
+        <Markdown source={ourStoryContent[1].bioText} />
       </TextContainer>
       <TextContainer>
         <h1>Our Mission</h1>
