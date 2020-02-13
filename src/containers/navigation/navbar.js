@@ -45,11 +45,14 @@ const StyledMenu = styled.nav`
   }
 `
 
-const Menu = ({ open, setOpen }) => {
+const Menu = ({ open, setOpen, services }) => {
   return (
     <StyledMenu open={open}>
         <Link to="/" onClick={() => { setOpen(!open); Event("Top Menu - Home") }}>Home</Link>
-        <Link to="/pools" onClick={() => { setOpen(!open); Event("Top Menu - Pool Gallery") }}>Pool Gallery</Link>
+        <Link to="/pools" onClick={() => { 
+          setOpen(!open); Event("Top Menu - Pool Gallery") 
+          services()
+          }}>Pool Gallery</Link>
         <Link to="/pool-installs" onClick={() => { setOpen(!open); Event("Top Menu - Our Work") }}>Our Work</Link>
         <Link to="/about" onClick={() => { Event("Top Menu - Our Story") }} >Our Story</Link>
         <Link to="/contact" onClick={() => { setOpen(!open); Event("Top Menu - Contact Us") }}>Contact Us</Link>
@@ -138,7 +141,7 @@ const NavBar = (props) => {
     <div>
       <div ref={node} style={{}}>
         <Burger black={props.black} open={open} setOpen={setOpen} />
-        <Menu style={{zIndex: "1000"}} open={open} setOpen={setOpen} />
+        <Menu services={props.services} style={{zIndex: "1000"}} open={open} setOpen={setOpen} />
       </div>
     </div>
   )  

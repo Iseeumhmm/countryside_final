@@ -57,6 +57,11 @@ const Services = () => {
     const [images, setImages] = useState(null)
     const [projects, setProjects] = useState(null)
 
+    const handlePageChange = () => {
+        window.location.href = "/pools"
+       
+    }
+
     // const [loaded, setLoaded] = useState(false)
     useEffect(() => {
         ReactGA.set({ page: window.location.pathname });
@@ -104,7 +109,7 @@ const Services = () => {
             <HeaderContainer id="header">
                 <Link to="/"><Logo /></Link>
             </HeaderContainer>
-            <NavBar style={{zIndex: "1000"}}/>
+            <NavBar services={handlePageChange} style={{zIndex: "1000"}}/>
             { projects ? <ViewPager id="view_pager" images={pageImages[0]} projects={projects}/> : null}
         </PageContainer>
     )
