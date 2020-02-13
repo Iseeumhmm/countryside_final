@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'components/Router'
+import ReactGA from 'react-ga'
 import Markdown from 'react-markdown'
 import NavBar from '../containers/navigation/navbar'
 import FooterNav from '../containers/navigation/footerNav'
@@ -77,6 +78,8 @@ export default function About() {
   const [ terms, setTerms ] = useState(null)
 
   useEffect(() => {
+    ReactGA.set({ page: window.location.pathname });
+    ReactGA.pageview(window.location.pathname)
     fetch(warranty).then((response) => response.text().then( (text) => {
       setTerms(text)
     }))

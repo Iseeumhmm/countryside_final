@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { Link } from 'components/Router'
+import ReactGA from 'react-ga'
 import NavBar from '../containers/navigation/navbar'
 import { useRouteData, Head } from 'react-static'
 import ViewPager from '../containers/springs/ViewPagerServices'
@@ -58,6 +59,8 @@ const Services = () => {
 
     // const [loaded, setLoaded] = useState(false)
     useEffect(() => {
+        ReactGA.set({ page: window.location.pathname });
+        ReactGA.pageview(window.location.pathname)
         let imageArray = []
         if (pageImages[0][1]) { pageImages[0][1].forEach( each => {
             let image = {

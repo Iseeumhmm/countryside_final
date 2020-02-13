@@ -2,6 +2,7 @@ import React, { useEffect, useState} from 'react'
 import { Link } from 'components/Router'
 import styled, { keyframes } from 'styled-components'
 import { useRouteData } from 'react-static'
+import ReactGA from 'react-ga'
 import NavBar from '../containers/navigation/navbar'
 import ViewStack from '../containers/springs/view-pager'
 import instagram from '../components/helperFuncrtions/getInstagram'
@@ -133,6 +134,8 @@ export default function Pools() {
         setDivWidth(ele)
     }
     useEffect(() => {
+        ReactGA.set({ page: window.location.pathname });
+        ReactGA.pageview(window.location.pathname)
         let element = document.getElementById("view-pager-container").offsetWidth
         getWidth(element)
         window.addEventListener( 'resize', getWidth(element) );

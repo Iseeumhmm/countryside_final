@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouteData } from 'react-static'
 import ReactGA from 'react-ga'
+import Event from '../components/helperFuncrtions/AnalyticsEvents'
 import KenBurns from '../containers/springs/ken-burns/kenBurns'
 import BrowserDetection from 'react-browser-detection';
 import BannerText from '../containers/home/BannerText'
@@ -107,8 +108,8 @@ function Home() {
 
       <BannerText />
       <SocialIcons>
-        <a href="https://www.instagram.com/countrysidelandscapeaylmer/" target="_blank" rel="noopener noreferrer"><img src={instagram} style={{ width: "4rem", margin: "1rem" }} alt="Instagram icon"/></a>
-        <a href="https://www.facebook.com/pages/category/Landscape-Company/Countryside-Landscape-1484042294955435/" target="_blank" rel="noopener noreferrer"><img src={facebook} style={{ width: "4rem", margin: "1rem" }} alt="Facebook icon"/></a>
+        <a onClick={ () => Event("Home - Instagram Link") } href="https://www.instagram.com/countrysidelandscapeaylmer/" target="_blank" rel="noopener noreferrer"><img src={instagram} style={{ width: "4rem", margin: "1rem" }} alt="Instagram icon"/></a>
+        <a onClick={ () => Event("Home - Facebook Link") } href="https://www.facebook.com/pages/category/Landscape-Company/Countryside-Landscape-1484042294955435/" target="_blank" rel="noopener noreferrer"><img src={facebook} style={{ width: "4rem", margin: "1rem" }} alt="Facebook icon"/></a>
       </ SocialIcons>
     </Container>
   )
