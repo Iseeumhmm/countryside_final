@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ReactGA from 'react-ga';
 import { Root, Routes, addPrefetchExcludes, Head } from 'react-static'
 import { Router } from 'components/Router'
@@ -123,13 +123,10 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
   }
 `
-
+const trackingId = "UA-153961441-2"; 
+ReactGA.initialize(trackingId);
 function App() {
-  useEffect(() => {
-    const trackingId = "UA-153961441-2"; 
-    ReactGA.initialize(trackingId);
-  },[])
-  
+ 
   return (
     <Root>
       <Head>
