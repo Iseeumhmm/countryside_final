@@ -48,16 +48,16 @@ export default (async function getPosts () {
           case "galleryImagesPoolProjects":
             projectItems.pools.push(item.entry)
             break;
-          case "galleryImagesProjectsStonework":
+          case "galleryImagesProjectsStonework_":
             projectItems.stonework.push(item.entry)
             break;
-          case "galleryImagesProjectsRetainingWalls":
+          case "galleryImagesProjectsRetainingWalls_":
             projectItems.retainingwalls.push(item.entry)
             break;
-          case "galleryImagesProjectsStructures":
+          case "galleryImagesProjectsStructures_":
             projectItems.structures.push(item.entry)
             break;
-          case "galleryImagesProjectsWoodworking":
+          case "galleryImagesProjectsWoodworking_":
             projectItems.woodworking.push(item.entry)
             break;
 
