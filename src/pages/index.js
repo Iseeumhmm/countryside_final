@@ -23,7 +23,13 @@ const Container = styled.div`
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  height: ${ props => props.vh}px;
+  height: ${ props => {
+    if (props.vh > 500) {
+      return `${props.vh}px`
+    } else {
+      return "100vh"
+    }
+  }};
   h1 { color: white; }
   animation: ${fadeIn} 1.5s linear;
 `
