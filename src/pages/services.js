@@ -17,7 +17,15 @@ const PageContainer = styled.div`
     display: flex;
     flex-flow: column nowrap;
     width: 100vw;
-    height: ${ ({ height }) => height}px;
+    height: ${ ({ height }) => {
+    if (height > 500) {
+        return `${height}px`
+        } else {
+        return "100vh"
+        }
+    }};
+    
+    /* height: ${ ({ height }) => height}px; */
     max-height: 100vh;
     h1 {color: ${({theme: {darkGrey}}) => darkGrey}; }
     h3 {

@@ -29,7 +29,14 @@ const ViewPagerContainer = styled.div`
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
-    height: ${ ({ height }) => height}px;
+    height: ${ ({ height }) => {
+    if (height > 500) {
+        return `${height}px`
+        } else {
+        return "100vh"
+        }
+    }};
+    /* height: ${ ({ height }) => height}px; */
     will-change: transform;
   }
   .split_page {
