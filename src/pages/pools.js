@@ -103,6 +103,12 @@ const ContentContainer = styled.div`
         }
        
     }
+    @media( min-width: 2300px ) {
+        top: 17.5rem;
+        .grid {
+            padding-top: 70rem;
+        }
+    }
 `
 const ViewStackContainer = styled.div`
     position: relative;
@@ -123,6 +129,9 @@ const ViewStackContainer = styled.div`
     }
     @media( min-width: 1295px ){
         height: 28vw;
+    }
+    @media( min-width: 1920px ){
+        height: 42rem;
     }
 `
 
