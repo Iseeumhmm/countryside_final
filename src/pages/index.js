@@ -73,18 +73,18 @@ function Home() {
     
     ReactGA.set({ page: window.location.pathname });
     ReactGA.pageview(window.location.pathname)
-    let toPreload = []
-    homePageSliderImages.items.forEach( link => {
-        toPreload.push([ `${link}?w=1920&q=40&fl=progressive` ])
-    })
-    var head = document.getElementsByTagName('head')[0];
-    toPreload.forEach( each => {
-        var link = document.createElement('link');
-        link.rel = 'preload'
-        link.as = 'image'
-        link.href = each
-        head.appendChild(link);
-    })
+    // let toPreload = []
+    // homePageSliderImages.items.forEach( link => {
+    //     toPreload.push([ `${link}?w=1920&q=40&fl=progressive` ])
+    // })
+    // var head = document.getElementsByTagName('head')[0];
+    // toPreload.forEach( each => {
+    //     var link = document.createElement('link');
+    //     link.rel = 'preload'
+    //     link.as = 'image'
+    //     link.href = each
+    //     head.appendChild(link);
+    // })
 
     handleHeight(window.innerHeight)
     window.addEventListener('resize', handleHeight(window.innerHeight));
