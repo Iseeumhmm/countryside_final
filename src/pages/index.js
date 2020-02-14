@@ -30,6 +30,7 @@ const Container = styled.div`
       return "100vh"
     }
   }};
+  min-height: 550px;
   h1 { color: white; }
   animation: ${fadeIn} 1.5s linear;
 `
