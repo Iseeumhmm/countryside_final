@@ -70,7 +70,7 @@ export default {
     ]
   },
   // siteRoot: 'https://countrysidelandscape.ca',
-  siteRoot: 'https://5ed804fe1aacd5016f1a2d28--serene-swartz-b2538d.netlify.app/',
+  siteRoot: 'https://testing.countrysidelandscape.ca',
   // webpack: (config, { stage }) => {
   //   if (stage === 'prod') {
   //     config.entry = ['babel-polyfill', config.entry]
