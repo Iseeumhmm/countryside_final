@@ -130,7 +130,7 @@ const PoolGallery = (props) => {
             <Fade bottom delay={1500}>
             <h2>Check us out on Instagram!</h2>
             <div className="instagram-container">
-                <iframe src="//lightwidget.com/widgets/7a72f762c64e5a61add84c71b1a0ef17.html" title="Instagram Widget" scrolling="no" allowtransparency="true" className="lightwidget-widget" style={{ width: '100%', border: '0', overflow: 'hidden' }}></iframe>
+                <iframe src="https://cdn.lightwidget.com/widgets/7a72f762c64e5a61add84c71b1a0ef17.html" title="Instagram Widget" scrolling="no" allowtransparency="true" className="lightwidget-widget" style={{ width: '100%', border: '0', overflow: 'hidden' }}></iframe>
             </div>
             <a href="https://auana.ca" className="auana">Website by AUANA DIGITAL</a>
             </Fade>
