@@ -12,36 +12,37 @@
   "disableRuntime": false,
   "preloadPollInterval": 300,
   "productionSourceMaps": false,
+  "silent": false,
   "entry": "index.js",
-  "siteRoot": "https://review.rickheffren.com",
+  "siteRoot": "https://5ed804fe1aacd5016f1a2d28--serene-swartz-b2538d.netlify.app",
   "plugins": [
     [
-      "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/node_modules/react-static-plugin-source-filesystem/node.api.js",
+      "/Users/rickheffren/WebDevelopment/CountrysideLandscape/node_modules/react-static-plugin-source-filesystem/node.api.js",
       {
-        "location": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages"
+        "location": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/src/pages"
       }
     ],
-    "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/node_modules/react-static-plugin-reach-router/browser.api.js",
-    "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/node_modules/react-static-plugin-sitemap/dist/node.api.js",
-    "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape"
+    "/Users/rickheffren/WebDevelopment/CountrysideLandscape/node_modules/react-static-plugin-reach-router/browser.api.js",
+    "/Users/rickheffren/WebDevelopment/CountrysideLandscape/node_modules/react-static-plugin-sitemap/dist/node.api.js",
+    "/Users/rickheffren/WebDevelopment/CountrysideLandscape"
   ],
   "paths": {
-    "ROOT": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape",
-    "SRC": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src",
-    "DIST": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/dist",
-    "ASSETS": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/dist",
-    "PLUGINS": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/plugins",
-    "TEMP": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/tmp",
-    "ARTIFACTS": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/artifacts",
-    "PUBLIC": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/public",
-    "NODE_MODULES": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/node_modules",
-    "EXCLUDE_MODULES": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/node_modules",
-    "PACKAGE": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/package.json",
-    "HTML_TEMPLATE": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/dist/index.html",
-    "STATIC_DATA": "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/dist/staticData"
+    "ROOT": "/Users/rickheffren/WebDevelopment/CountrysideLandscape",
+    "SRC": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/src",
+    "DIST": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/dist",
+    "ASSETS": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/dist",
+    "PLUGINS": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/plugins",
+    "TEMP": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/tmp",
+    "ARTIFACTS": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/artifacts",
+    "PUBLIC": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/public",
+    "NODE_MODULES": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/node_modules",
+    "EXCLUDE_MODULES": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/node_modules",
+    "PACKAGE": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/package.json",
+    "HTML_TEMPLATE": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/dist/index.html",
+    "STATIC_DATA": "/Users/rickheffren/WebDevelopment/CountrysideLandscape/dist/staticData"
   },
   "basePath": "",
-  "publicPath": "https://review.rickheffren.com/",
+  "publicPath": "https://5ed804fe1aacd5016f1a2d28--serene-swartz-b2538d.netlify.app/",
   "assetsPath": "",
   "extractCssChunks": false,
   "inlineCss": false,

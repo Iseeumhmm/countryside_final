@@ -33,47 +33,52 @@ export default {
         getData: () => contentfulImages['singles']
       },
       {
-        path: '/pools',
-        template: 'src/pages/services.js',
+        path: '/pool-gallery',
+        template: 'src/pages/pool-gallery.js',
         getData: () => page("pools")
       },
       {
-        path: '/stonework',
-        template: 'src/pages/services.js',
-        getData: () => page("stonework")
+        path: '/pools',
+        template: 'src/pages/servicesPools.js',
+        getData: () => page("pools")
       },
-      {
-        path: '/retainingwalls',
-        template: 'src/pages/services.js',
-        getData: () => page("retainingwalls")
-      },
-      {
-        path: '/structures',
-        template: 'src/pages/services.js',
-        getData: () => page("structures")
-      },
-      {
-        path: '/woodworking',
-        template: 'src/pages/services.js',
-        getData: () => page("woodworking")
-      },
-      {
-        path: '/woodworking',
-        template: 'src/pages/services.js',
-        getData: () => page("woodworking")
-      }
+      // {
+      //   path: '/stonework',
+      //   template: 'src/pages/services.js',
+      //   getData: () => page("stonework")
+      // },
+      // {
+      //   path: '/retainingwalls',
+      //   template: 'src/pages/services.js',
+      //   getData: () => page("retainingwalls")
+      // },
+      // {
+      //   path: '/structures',
+      //   template: 'src/pages/services.js',
+      //   getData: () => page("structures")
+      // },
+      // {
+      //   path: '/woodworking',
+      //   template: 'src/pages/services.js',
+      //   getData: () => page("woodworking")
+      // },
+      // {
+      //   path: '/woodworking',
+      //   template: 'src/pages/services.js',
+      //   getData: () => page("woodworking")
+      // }
     ]
   },
-  siteRoot: 'https://countrysidelandscape.ca',
-  // siteRoot: 'https://countryside.rickheffren.com',
-  webpack: (config, { stage }) => {
-    if (stage === 'prod') {
-      config.entry = ['babel-polyfill', config.entry]
-    } else if (stage === 'dev') {
-      config.entry = ['babel-polyfill', ...config.entry]
-    }
-    return config
-  },
+  // siteRoot: 'https://countrysidelandscape.ca',
+  siteRoot: 'https://5ed804fe1aacd5016f1a2d28--serene-swartz-b2538d.netlify.app/',
+  // webpack: (config, { stage }) => {
+  //   if (stage === 'prod') {
+  //     config.entry = ['babel-polyfill', config.entry]
+  //   } else if (stage === 'dev') {
+  //     config.entry = ['babel-polyfill', ...config.entry]
+  //   }
+  //   return config
+  // },
   plugins: [
     [
       require.resolve('react-static-plugin-source-filesystem'),
