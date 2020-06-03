@@ -1,24 +1,24 @@
 // Imports
-import plugin0 from '/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/node_modules/react-static-plugin-reach-router/browser.api.js'
+import plugin0 from '__react_static_root__/node_modules/react-static-plugin-reach-router/browser.api.js'
 
 // Plugins
 const plugins = [{
-        location: "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/node_modules/react-static-plugin-source-filesystem",
+        location: "__react_static_root__/node_modules/react-static-plugin-source-filesystem",
         plugins: [],
         hooks: {}
       },
 {
-        location: "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/node_modules/react-static-plugin-reach-router",
+        location: "__react_static_root__/node_modules/react-static-plugin-reach-router",
         plugins: [],
         hooks: plugin0({})
       },
 {
-        location: "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/node_modules/react-static-plugin-sitemap/dist",
+        location: "__react_static_root__/node_modules/react-static-plugin-sitemap/dist",
         plugins: [],
         hooks: {}
       },
 {
-        location: "/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape",
+        location: "__react_static_root__/",
         plugins: [],
         hooks: {}
       }]

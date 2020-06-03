@@ -1,16 +1,16 @@
 
 
-  
+
 // Template Map
 export default {
-  '/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/404.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/404.js').default,
-'/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/about.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/about.js').default,
-'/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/contact.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/contact.js').default,
-'/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/index.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/index.js').default,
-'/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/services.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/services.js').default,
-'/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/warranty.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/warranty.js').default,
-'/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/pools.js': require('/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/pools.js').default
+  '__react_static_root__/src/pages/404.js': require('__react_static_root__/src/pages/404.js').default,
+'__react_static_root__/src/pages/about.js': require('__react_static_root__/src/pages/about.js').default,
+'__react_static_root__/src/pages/contact.js': require('__react_static_root__/src/pages/contact.js').default,
+'__react_static_root__/src/pages/index.js': require('__react_static_root__/src/pages/index.js').default,
+'__react_static_root__/src/pages/services.js': require('__react_static_root__/src/pages/services.js').default,
+'__react_static_root__/src/pages/warranty.js': require('__react_static_root__/src/pages/warranty.js').default,
+'__react_static_root__/src/pages/pools.js': require('__react_static_root__/src/pages/pools.js').default
 }
 
-export const notFoundTemplate = '/Users/rickheffren/Documents/WebDevelopment/CountrysideLandscape/src/pages/404.js'
+export const notFoundTemplate = '__react_static_root__/src/pages/404.js'
 
