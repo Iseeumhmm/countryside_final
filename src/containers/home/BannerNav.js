@@ -34,7 +34,7 @@ export default function BannerNav(props) {
                 fontWeight: "bold"
                 }}>
                 <Link 
-                    to="/pool-installs"
+                    to="/pool-gallery"
                     onClick={ () => Event("Home Center Nav - Our Work") }
                     ga-on="click"
                     ga-event-category="our-work"
