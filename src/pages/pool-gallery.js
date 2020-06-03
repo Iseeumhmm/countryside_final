@@ -132,8 +132,8 @@ const PoolGallery = (props) => {
             <div className="instagram-container">
                 <iframe src="https://cdn.lightwidget.com/widgets/7a72f762c64e5a61add84c71b1a0ef17.html" title="Instagram Widget" scrolling="no" allowtransparency="true" className="lightwidget-widget" style={{ width: '100%', border: '0', overflow: 'hidden' }}></iframe>
             </div>
-            <a href="https://auana.ca" className="auana">Website by AUANA DIGITAL</a>
             </Fade>
+            <a href="https://auana.ca" className="auana">Website by AUANA DIGITAL</a>
         </ PageContainer>
 
     )
