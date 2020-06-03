@@ -115,7 +115,7 @@ const PoolGallery = (props) => {
                         const title = str.replace(/\s+/g, '-').toLowerCase();
                         return (
                             <Link key={ids.generate()} to={`/pools?id=${index}&job=${title}`}>
-                                <Fade bottom cascade delay={index * 200}>
+                                <Fade bottom cascade delay={index * 150}>
                                     <GridImageContainer>
                                         <GridImage src={`${each.image[1].fields.file.url}?w=400`} alt={each.title} />
                                         <p>{each.title}</p>
@@ -127,7 +127,7 @@ const PoolGallery = (props) => {
                     })
                 }
             </ContentContainer> 
-            <Fade bottom delay={1500}>
+            <Fade bottom delay={750}>
             <h2>Check us out on Instagram!</h2>
             <div className="instagram-container">
                 <iframe src="https://cdn.lightwidget.com/widgets/7a72f762c64e5a61add84c71b1a0ef17.html" title="Instagram Widget" scrolling="no" allowtransparency="true" className="lightwidget-widget" style={{ width: '100%', border: '0', overflow: 'hidden' }}></iframe>
