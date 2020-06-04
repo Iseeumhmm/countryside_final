@@ -17,6 +17,12 @@ const PageContainer = styled.div`
   height: 100vh;
   height: ${ props => props.vh}px;
   text-align: center;
+  @media(max-width: 1150px){
+     button {
+       /* right: 5rem;
+       top: 33vh; */
+     }
+    }
   @media(max-height: 575px ) {
     height: 70rem;
     position: relative;
@@ -30,6 +36,12 @@ const BackgroundContainer = styled.div`
     height: 100vh;
     background-image: url(${Background});
     background-size: cover;
+    @media(max-width: 2158px){
+      background-position: bottom right;
+    }
+    @media(max-width: 1150px){
+      background-position: top left;
+    }
     @media(max-height: 575px ) {
       height: 70rem;
       background-repeat: no-repeat;

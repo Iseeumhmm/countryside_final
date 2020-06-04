@@ -84,11 +84,11 @@ const ContentContainer = styled.div`
 `
 
 let loadingPage = (
-    <h1>Loading...</h1>
+    <div>Loading...</div>
 )
 
 const PoolGallery = () => {
-    const [loading, setLoading] = useState(0)
+    const [loading, setLoading] = useState(true)
 
     const pageImages = useRouteData()
     useEffect(() => {
