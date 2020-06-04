@@ -53,7 +53,8 @@ const GridImageContainer = styled.div`
 const GridImage = styled.img`
     object-fit: cover;
     height: 14rem;
-    max-width: 21rem;
+    width: 25rem;
+    /* max-width: 21rem; */
     @media(max-width: 454px) {
         max-width:400px;
         width: 95%;
@@ -74,7 +75,7 @@ const ContentContainer = styled.div`
     @media(max-width: 1068px) {
         grid-template-columns: 1fr 1fr;
     }
-    @media(max-width: 700px) {
+    @media(max-width: 700px) {  
        width: 100%;
     }
     @media(max-width: 454px) {
