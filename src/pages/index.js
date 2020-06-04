@@ -99,7 +99,7 @@ function Home() {
     )
     setTimeout(() => {
       setLoading(false)
-    }, 1000)
+    }, 1250)
 
     // return () => {
     //   window.removeEventListener('resize', handleHeight(window.innerHeight))
