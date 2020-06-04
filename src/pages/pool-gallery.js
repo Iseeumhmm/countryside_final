@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'components/Router'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { useRouteData } from 'react-static'
 import Fade from 'react-reveal/Fade';
 import ReactGA from 'react-ga'
@@ -83,8 +83,12 @@ const ContentContainer = styled.div`
     }
 `
 
+let loadingPage = (
+    <h1>Loading...</h1>
+)
 
-const PoolGallery = (props) => {
+const PoolGallery = () => {
+    const [loading, setLoading] = useState(0)
 
     const pageImages = useRouteData()
     useEffect(() => {
@@ -94,13 +98,11 @@ const PoolGallery = (props) => {
         script.src = "https://cdn.lightwidget.com/widgets/lightwidget.js";
         script.async = true;
         document.body.appendChild(script);
-        console.log(props.match);
-
-        // document.querySelector('iframe').setAttribute('style', 'height: 14rem !important; width: 100%; border: none;');
-        // console.log('Data in: ', pageImages)
+        setTimeout(() => {
+            setLoading(false)
+        }, 1500)
     }, []);
-
-    return (
+    let page = (
         <PageContainer className="page-container" style={{ position: "relative", overflowX: "hidden" }}>
             <HeaderContainer>
                 <NavBar black style={{ zIndex: "1000" }} />
@@ -127,17 +129,18 @@ const PoolGallery = (props) => {
                         )
                     })
                 }
-            </ContentContainer> 
+            </ContentContainer>
             <Fade bottom delay={750}>
-            <h2>Check us out on Instagram!</h2>
-            <div className="instagram-container">
-                <iframe src="https://cdn.lightwidget.com/widgets/7a72f762c64e5a61add84c71b1a0ef17.html" title="Instagram Widget" scrolling="no" allowtransparency="true" className="lightwidget-widget" style={{ width: '100%', border: '0', overflow: 'hidden' }}></iframe>
-            </div>
+                <h2>Check us out on Instagram!</h2>
+                <div className="instagram-container">
+                    <iframe src="https://cdn.lightwidget.com/widgets/7a72f762c64e5a61add84c71b1a0ef17.html" title="Instagram Widget" scrolling="no" allowtransparency="true" className="lightwidget-widget" style={{ width: '100%', border: '0', overflow: 'hidden' }}></iframe>
+                </div>
             </Fade>
             <a href="https://auana.ca" className="auana">Website by AUANA DIGITAL</a>
         </ PageContainer>
-
     )
+    return loading ? loadingPage : page
+   
 }
 
 export default PoolGallery;

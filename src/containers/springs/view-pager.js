@@ -6,7 +6,6 @@ import { useGesture } from 'react-use-gesture'
 import Event from '../../components/helperFuncrtions/AnalyticsEvents';
 import styled from 'styled-components';
 const swipe = require('../../images/icons/swipe-left.png')
-const poster = require('../../images/icons/instagram_video_poster.jpg')
 var ids = require('short-id')
 require('../../components/SwipeGesture')
 
@@ -116,9 +115,8 @@ export default function Viewpager(propsFrom) {
       {passedType === "contentful" ? <Link key={`${i}_link`} to={passedType === "contentful" ? `/${pages[i][0]}` : "/pool-installs"} onClick={ () => {Event(`Our Work - ${pages[i][0] ? pages[i][0] : ""} slider clicked`)} }>
         <h2 style={{textAlign: "center", textTransform: "capitalize", textDecoration: "underline"}}>{pages[i][0]}</h2>
       </Link>  : null }
-      {passedType === "instagram" ? <h2>Swipe through our Instagram Feed!</h2> : null }
       <animated.div style={{ transform: sc.interpolate(s => `scale(${s})`), backgroundImage: pages[i][2] !== "VIDEO" ? `url(${pages[i][1]})` : "unset" }}>
-        {pages[i][2] === "VIDEO" ? <React.Fragment><VideoContainer controls width="250" type="video/mp4" poster={poster} src={pages[i][1]} preload="metadata"/></React.Fragment>: ""}
+        {pages[i][2] === "VIDEO" ? <React.Fragment><VideoContainer controls width="250" type="video/mp4" src={pages[i][1]} preload="metadata"/></React.Fragment>: ""}
       </ animated.div>
       
       {passedType === "instagram" ? <a key={`${i}_link`} target="_blank" rel="noopener noreferrer" href={`${pages[i][3]}`}>

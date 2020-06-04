@@ -11,7 +11,7 @@ const FooterNavContainer = styled.div`
     z-index: 10;
     font-weight: 700;
     font-size: 2rem;
-    a { color: ${ ({light}) => light ? ({theme: {lightGrey}}) => lightGrey : ({theme: {highlightSecondary}}) => highlightSecondary } }
+    a { color: ${ ({ light }) => light ? ({ theme: { lightGrey } }) => lightGrey : ({ theme: { highlightSecondary } }) => highlightSecondary} }
     text-decoration: underline;
     ul {
         padding-inline-start: 0;
@@ -37,7 +37,7 @@ const FooterNavContainer = styled.div`
         position: absolute;
         bottom: 0;
         left: 50%;
-        color: ${ ({light}) => light ? ({theme: {lightGrey}}) => lightGrey : ({theme: {darkGrey}}) => darkGrey };
+        color: ${ ({ light }) => light ? ({ theme: { lightGrey } }) => lightGrey : ({ theme: { darkGrey } }) => darkGrey};
         transform: translateX(-50%);
     }
 `
@@ -47,10 +47,11 @@ const FooterNav = (props) => {
     return (
         <FooterNavContainer id="footer" light={props.light}>
             <ul>
-                <li style={ props.contact ? {display: "none"} : null }><Link to="/contact" onClick={ () => Event("Footer Menu - Contact") }>Contact</Link></li>
-                <li style={ props.pools ? {display: "none"} : null }><Link to="/pools" onClick={ () => Event("Footer Menu - Pool Gallery") }>Pool Gallery</Link></li>
-                <li style={ props.ourWork ? {display: "none"} : null }><Link to="/pool-installs" onClick={ () => Event("Footer Menu - Our Work") }>Our Work</Link></li>
-                <li style={ props.ourStory ? {display: "none"} : null }><Link to="/about" onClick={ () => Event("Footer Menu - Our Story") }>Our Story</Link></li>
+                <li><Link to="/" onClick={() => Event("Footer Menu - Home")}>Home</Link></li>
+                <li style={props.contact ? { display: "none" } : null}><Link to="/contact" onClick={() => Event("Footer Menu - Contact")}>Contact</Link></li>
+                {/* <li style={ props.pools ? {display: "none"} : null }><Link to="/pools" onClick={ () => Event("Footer Menu - Pool Gallery") }>Pool Gallery</Link></li> */}
+                <li style={props.ourWork ? { display: "none" } : null}><Link to="/pool-gallery" onClick={() => Event("Footer Menu - Gallery")}>Gallery</Link></li>
+                <li style={props.ourStory ? { display: "none" } : null}><Link to="/about" onClick={() => Event("Footer Menu - Our Story")}>Our Story</Link></li>
 
             </ul>
             <a href="https://auana.ca" className="auana">Website by AUANA DIGITAL</a>

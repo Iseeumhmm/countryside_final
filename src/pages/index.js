@@ -57,10 +57,9 @@ const FireFoxHome = styled.div`
 
 function Home() {
   const homePageSliderImages = useRouteData()
-  // const [viewHeight, setViewHeight] = useState(0)
   const [browser, setBrowser] = useState(0)
-  // const [loading, setLoading] = useState(true)
   const [firefox, setFirefox] = useState(false)
+  const [loading, setLoading] = useState(0)
 
   const browserHandler = {
     default: (browser) => {
@@ -72,11 +71,8 @@ function Home() {
       }
     },
   };
-  // const handleHeight = (ele) => {
-  //   setViewHeight(ele)
-  // }
-  useEffect(() => {
 
+  useEffect(() => {
     ReactGA.set({ page: window.location.pathname });
     ReactGA.pageview(window.location.pathname)
     // let toPreload = []
@@ -129,7 +125,7 @@ function Home() {
 
   )
   // return loading ? <LoadingPage /> : page
-  return  page
+  return page
 
 }
 

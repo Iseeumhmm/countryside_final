@@ -49,7 +49,7 @@ const Menu = ({ open, setOpen, services }) => {
   return (
     <StyledMenu open={open}>
         <Link to="/" onClick={() => { setOpen(!open); Event("Top Menu - Home") }}>Home</Link>
-        <Link to="/pool-gallery" onClick={() => { setOpen(!open); Event("Top Menu - Our Work") }}>Our Work</Link>
+        <Link to="/pool-gallery" onClick={() => { setOpen(!open); Event("Top Menu - Gallery") }}>Gallery</Link>
         <Link to="/about" onClick={() => { Event("Top Menu - Our Story") }} >Our Story</Link>
         <Link to="/contact" onClick={() => { setOpen(!open); Event("Top Menu - Contact Us") }}>Contact Us</Link>
         <Link to="/warranty" onClick={() => { setOpen(!open); Event("Top Menu - Warranty") }}>Warranty</Link>
