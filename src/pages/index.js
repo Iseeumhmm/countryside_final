@@ -3,20 +3,25 @@ import React, { useEffect, useState } from 'react'
 import { useRouteData } from 'react-static'
 import ReactGA from 'react-ga'
 import Event from '../components/helperFuncrtions/AnalyticsEvents'
+import styled, { keyframes } from 'styled-components'
 import KenBurns from '../containers/springs/ken-burns/kenBurns'
 import BrowserDetection from 'react-browser-detection';
 import BannerText from '../containers/home/BannerText'
 import NavBar from '../containers/navigation/navbar'
 import LoadingPage from '../components/spashScreen'
+import poolPage from '../pages/pools'
 import instagram from '../images/icons/instagram.png'
 import facebook from '../images/icons/facebook.png'
-import styled, {keyframes} from 'styled-components'
+import Pools from '../pages/pools'
 
 // Styles
 
 const fadeIn = keyframes`
 from: { opacity: 0 }
 to:   { opacity: 1 }
+`
+const PageContainer = styled.div`
+
 `
 const Container = styled.div`
   position: fixed;
@@ -45,7 +50,7 @@ const FireFoxHome = styled.div`
   width: 100vw;
   height: ${ props => props.vh}px;
   overflow: hidden;
-  background-image: url(${({image}) => image });
+  background-image: url(${({ image }) => image});
   background-size: cover;
   background-position: center center;
 `
@@ -59,7 +64,7 @@ function Home() {
 
   const browserHandler = {
     default: (browser) => {
-      if (browser === "firefox" ){ 
+      if (browser === "firefox") {
         setFirefox(true)
         return null
       } else {
@@ -70,8 +75,8 @@ function Home() {
   const handleHeight = (ele) => {
     setViewHeight(ele)
   }
-  useEffect( () => {
-    
+  useEffect(() => {
+
     ReactGA.set({ page: window.location.pathname });
     ReactGA.pageview(window.location.pathname)
     // let toPreload = []
@@ -91,14 +96,14 @@ function Home() {
     window.addEventListener('resize', handleHeight(window.innerHeight));
     window.onorientationchange = () => handleHeight(null)
 
-    setBrowser( 
+    setBrowser(
       <BrowserDetection>
-        { browserHandler }
+        {browserHandler}
       </BrowserDetection>
     )
     setTimeout(() => {
-        setLoading(false)
-    },1500)
+      setLoading(false)
+    }, 1500)
 
     return () => {
       window.removeEventListener('resize', handleHeight(window.innerHeight))
@@ -107,19 +112,25 @@ function Home() {
   }, [])
 
   const page = (
-    <Container vh={viewHeight} style={{position: "relative", overflowX: "hidden"}}>
-       {browser}
-      <NavBar style={{zIndex: "1000"}}/>
-      {firefox ? <FireFoxHome vh={viewHeight} image={homePageSliderImages.items[0]}/> : <KenBurns images={ homePageSliderImages.items } />}
+    <PageContainer>
+      <Container vh={viewHeight} style={{ position: "relative", overflowX: "hidden" }}>
+        {browser}
+        <NavBar style={{ zIndex: "1000" }} />
+        {firefox ? <FireFoxHome vh={viewHeight} image={homePageSliderImages.items[0]} /> : <KenBurns images={homePageSliderImages.items} />}
 
-      <BannerText />
-      <SocialIcons>
-        <a onClick={ () => Event("Home - Instagram Link") } href="https://www.instagram.com/countrysidelandscapeaylmer/" target="_blank" rel="noopener noreferrer"><img src={instagram} style={{ width: "4rem", margin: "1rem" }} alt="Instagram icon"/></a>
-        <a onClick={ () => Event("Home - Facebook Link") } href="https://www.facebook.com/pages/category/Landscape-Company/Countryside-Landscape-1484042294955435/" target="_blank" rel="noopener noreferrer"><img src={facebook} style={{ width: "4rem", margin: "1rem" }} alt="Facebook icon"/></a>
-      </ SocialIcons>
-    </Container>
+        <BannerText />
+        <SocialIcons>
+          <a onClick={() => Event("Home - Instagram Link")} href="https://www.instagram.com/countrysidelandscapeaylmer/" target="_blank" rel="noopener noreferrer"><img src={instagram} style={{ width: "4rem", margin: "1rem" }} alt="Instagram icon" /></a>
+          <a onClick={() => Event("Home - Facebook Link")} href="https://www.facebook.com/pages/category/Landscape-Company/Countryside-Landscape-1484042294955435/" target="_blank" rel="noopener noreferrer"><img src={facebook} style={{ width: "4rem", margin: "1rem" }} alt="Facebook icon" /></a>
+        </ SocialIcons>
+      </Container>
+      <Pools />
+    </PageContainer>
+
   )
-  return loading ? <LoadingPage/> : page
+  // return loading ? <LoadingPage /> : page
+  return  page
+
 }
 
 export default Home

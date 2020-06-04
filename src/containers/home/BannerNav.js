@@ -28,6 +28,7 @@ export default function BannerNav(props) {
     return (
         <NavList secondary={props.secondary}>
             <li><Link to="/about" onClick={ () => Event("Home Center Nav - Our Story") }>OUR STORY</Link></li>
+            <li><Link to="/about" onClick={ () => Event("Home Center Nav - Our Story") }>OUR STORY</Link></li>
             <li style={{
                 fontSize: "2rem", 
                 marginTop: "-.1rem", 
@@ -45,6 +46,8 @@ export default function BannerNav(props) {
                 </Link>
             </li>
             <li><Link to="/contact" onClick={ () => Event("Home Center Nav - Contact") }>CONTACT</Link></li>
+            <li><Link to="/about" onClick={ () => Event("Home Center Nav - Our Story") }>OUR STORY</Link></li>
+
         </NavList>
     )
 }

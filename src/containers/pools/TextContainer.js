@@ -55,7 +55,7 @@ li {
     padding: 0 1rem;
     height: 20rem;
     
-    background-color: rgba(0,0,0,.05);
+    /* background-color: rgba(0,0,0,.05); */
     h1 { text-align: center; }
     h2 {
         padding: 0;
