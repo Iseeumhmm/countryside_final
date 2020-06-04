@@ -49,13 +49,10 @@ const Menu = ({ open, setOpen, services }) => {
   return (
     <StyledMenu open={open}>
         <Link to="/" onClick={() => { setOpen(!open); Event("Top Menu - Home") }}>Home</Link>
-        <Link to="/pools" onClick={() => { 
-          setOpen(!open); Event("Top Menu - Pool Gallery") 
-          services()
-          }}>Pool Gallery</Link>
-        <Link to="/pool-installs" onClick={() => { setOpen(!open); Event("Top Menu - Our Work") }}>Our Work</Link>
+        <Link to="/pool-gallery" onClick={() => { setOpen(!open); Event("Top Menu - Our Work") }}>Our Work</Link>
         <Link to="/about" onClick={() => { Event("Top Menu - Our Story") }} >Our Story</Link>
         <Link to="/contact" onClick={() => { setOpen(!open); Event("Top Menu - Contact Us") }}>Contact Us</Link>
+        <Link to="/warranty" onClick={() => { setOpen(!open); Event("Top Menu - Warranty") }}>Warranty</Link>
     </StyledMenu>
   )
 }
@@ -113,26 +110,6 @@ const Burger = ({ black, open, setOpen }) => {
     </StyledBurger>
   )
 }
-
-// const useOnClickOutside = (ref, handler) => {
-//     React.useEffect(() => {
-//       const listener = event => {
-//         if (!ref.current || ref.current.contains(event.target)) {
-//           return;
-//         }
-//         handler(event);
-//       };
-//       document.addEventListener('mousedown', listener);
-  
-//       return () => {
-//         document.removeEventListener('mousedown', listener);
-//       };
-//     },
-//     [ref, handler],
-//     );
-//   };
-  
-
 
 const NavBar = (props) => {
   const [open, setOpen] = useState(false);

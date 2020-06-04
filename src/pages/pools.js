@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'components/Router'
 import styled, { keyframes } from 'styled-components'
-import { useRouteData } from 'react-static'
 import ReactGA from 'react-ga'
-import NavBar from '../containers/navigation/navbar'
-import BannerNav from '../containers/home/BannerNav'
-import BannerText from '../containers/home/BannerText'
-import ViewStack from '../containers/springs/view-pager'
-import instagram from '../components/helperFuncrtions/getInstagram'
-import FooterNav from '../containers/navigation/footerNav'
 import TextContainer from '../containers/pools/TextContainer'
 import Event from '../components/helperFuncrtions/AnalyticsEvents'
 import catalogue from '../../public/Leisure Pools Consumer Brochure 2019-0424.pdf'
-import background from '../images/backgrounds/poolPage.jpg'
-import backgroundLarge from '../images/backgrounds/poolPage_2360.jpg'
 import logo from '../images/logos/LargeLogoBlack.png'
 
 const animateCatalogue = keyframes`
@@ -24,6 +15,7 @@ const animateCatalogue = keyframes`
 
 const PageContainer = styled.div`
     #catalogue {
+        padding-top: 4rem;
         font-size: 2rem;
         font-weight: 700;
         animation: ${animateCatalogue} 2s ease-in-out infinite;
@@ -64,12 +56,7 @@ const ContentContainer = styled.div`
         width: 90vw;
     }
     @media( min-width: 950px ) {
-        /* top: 9.7vw; */
         width: 80.1vw;
-    }
-    @media( min-width: 1295px ) {
-    }
-    @media( min-width: 2300px ) {
     }
 `
 
