@@ -10,13 +10,13 @@ const TextContainer = styled.div`
 border-radius: 2rem;
 margin: auto;
 position: relative;
-h1 { color: ${({ theme: {lightGrey} }) => lightGrey }}; 
-color: ${({ theme: {lightGrey} }) => lightGrey };
+h1 { color: ${({ theme: {darkGrey} }) => darkGrey }}; 
+color: ${({ theme: {darkGrey} }) => darkGrey };
 text-align: center;
 h2 { padding: ${({ theme: {headerPadding} }) => headerPadding }}
 p, h2 { 
     text-align: left;
-    color: ${({ theme: {lightGrey} }) => lightGrey };
+    color: ${({ theme: {darkGrey} }) => darkGrey };
 }
 img { 
     width: 5rem;
@@ -28,7 +28,7 @@ li {
 }
 
 &#one { 
-    padding-top: 76vw; 
+    /* padding-top: 76vw;  */
     a { 
         display: block;
         margin: 5.2rem 0; 
@@ -37,18 +37,18 @@ li {
         }
     }
 }
-@media( min-width: 675px ) {
+/* @media( min-width: 675px ) {
     &#one { padding-top: 62vw; }
     width: 48rem;
-}
+} */
 @media( min-width: 875px ) {
     h1 { text-align: left }
-    width: 60rem;
+    /* width: 60rem; */
 }
 @media( min-width: 950px ) {
-    &#one {
+    /* &#one {
         padding-top: 48vw;
-    }
+    } */
     width: 65%;
 }
 @media( min-width: 1295px ) {
@@ -62,7 +62,7 @@ li {
     }
     margin-top: 0;
     width: 95%;
-    &#one { 
+    /* &#one { 
         padding-top: 0;
         grid-column: 1/6; 
         grid-row: 1;
@@ -106,7 +106,7 @@ li {
         @media(min-width: 2300px ){
             width: 98%;
         }
-    }
+    } */
 }
 `
 export default (props) => (

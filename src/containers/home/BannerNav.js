@@ -21,6 +21,9 @@ const NavList = styled.ul`
         display: inline-block;
         padding: 0 .8rem;
     }
+    @media(max-width: 500px){
+        flex-direction: column;
+    }
 `
 
 export default function BannerNav(props) {
@@ -28,7 +31,7 @@ export default function BannerNav(props) {
     return (
         <NavList secondary={props.secondary}>
             <li><Link to="/about" onClick={ () => Event("Home Center Nav - Our Story") }>OUR STORY</Link></li>
-            <li><Link to="/about" onClick={ () => Event("Home Center Nav - Our Story") }>OUR STORY</Link></li>
+            <li><a href="#pools" onClick={ () => Event("Home Center Nav - Pools") }>POOLS</a></li>
             <li style={{
                 fontSize: "2rem", 
                 marginTop: "-.1rem", 
@@ -36,17 +39,17 @@ export default function BannerNav(props) {
                 }}>
                 <Link 
                     to="/pool-gallery"
-                    onClick={ () => Event("Home Center Nav - Our Work") }
+                    onClick={ () => Event("Home Center Nav - Gallery") }
                     ga-on="click"
                     ga-event-category="our-work"
                     style={{
                         color: "#93D40A"
                     }}
-                    >OUR WORK
+                    >GALLERY
                 </Link>
             </li>
             <li><Link to="/contact" onClick={ () => Event("Home Center Nav - Contact") }>CONTACT</Link></li>
-            <li><Link to="/about" onClick={ () => Event("Home Center Nav - Our Story") }>OUR STORY</Link></li>
+            <li><Link to="/warranty" onClick={ () => Event("Home Center Nav - Warranty") }>WARRANTY</Link></li>
 
         </NavList>
     )

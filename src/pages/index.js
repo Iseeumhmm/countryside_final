@@ -28,14 +28,14 @@ const Container = styled.div`
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  height: ${ props => {
+  /* height: ${ props => {
     if (props.vh > 500) {
       return `${props.vh}px`
     } else {
       return "100vh"
     }
-  }};
-  min-height: 550px;
+  }}; */
+  /* min-height: 550px; */
   h1 { color: white; }
   animation: ${fadeIn} 1.5s linear;
 `
@@ -57,9 +57,9 @@ const FireFoxHome = styled.div`
 
 function Home() {
   const homePageSliderImages = useRouteData()
-  const [viewHeight, setViewHeight] = useState(0)
+  // const [viewHeight, setViewHeight] = useState(0)
   const [browser, setBrowser] = useState(0)
-  const [loading, setLoading] = useState(true)
+  // const [loading, setLoading] = useState(true)
   const [firefox, setFirefox] = useState(false)
 
   const browserHandler = {
@@ -72,9 +72,9 @@ function Home() {
       }
     },
   };
-  const handleHeight = (ele) => {
-    setViewHeight(ele)
-  }
+  // const handleHeight = (ele) => {
+  //   setViewHeight(ele)
+  // }
   useEffect(() => {
 
     ReactGA.set({ page: window.location.pathname });
@@ -92,9 +92,9 @@ function Home() {
     //     head.appendChild(link);
     // })
 
-    handleHeight(window.innerHeight)
-    window.addEventListener('resize', handleHeight(window.innerHeight));
-    window.onorientationchange = () => handleHeight(null)
+    // handleHeight(window.innerHeight)
+    // window.addEventListener('resize', handleHeight(window.innerHeight));
+    // window.onorientationchange = () => handleHeight(null)
 
     setBrowser(
       <BrowserDetection>
@@ -105,18 +105,18 @@ function Home() {
       setLoading(false)
     }, 1500)
 
-    return () => {
-      window.removeEventListener('resize', handleHeight(window.innerHeight))
-      window.onorientationchange = null
-    }
+    // return () => {
+    //   window.removeEventListener('resize', handleHeight(window.innerHeight))
+    //   window.onorientationchange = null
+    // }
   }, [])
 
   const page = (
     <PageContainer>
-      <Container vh={viewHeight} style={{ position: "relative", overflowX: "hidden" }}>
+      <Container style={{ position: "relative", overflowX: "hidden" }}>
         {browser}
         <NavBar style={{ zIndex: "1000" }} />
-        {firefox ? <FireFoxHome vh={viewHeight} image={homePageSliderImages.items[0]} /> : <KenBurns images={homePageSliderImages.items} />}
+        {firefox ? <FireFoxHome image={homePageSliderImages.items[0]} /> : <KenBurns images={homePageSliderImages.items} />}
 
         <BannerText />
         <SocialIcons>
