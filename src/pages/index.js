@@ -59,7 +59,7 @@ function Home() {
   const homePageSliderImages = useRouteData()
   const [browser, setBrowser] = useState(0)
   const [firefox, setFirefox] = useState(false)
-  const [loading, setLoading] = useState(0)
+  const [loading, setLoading] = useState(true)
 
   const browserHandler = {
     default: (browser) => {
@@ -99,7 +99,7 @@ function Home() {
     )
     setTimeout(() => {
       setLoading(false)
-    }, 1500)
+    }, 1000)
 
     // return () => {
     //   window.removeEventListener('resize', handleHeight(window.innerHeight))
@@ -124,8 +124,8 @@ function Home() {
     </PageContainer>
 
   )
-  // return loading ? <LoadingPage /> : page
-  return page
+  return loading ? <LoadingPage /> : page
+  // return page
 
 }
 
