@@ -27,11 +27,11 @@ export default {
         path: '/warranty',
         template: 'src/pages/warranty.js',
       },
-      {
-        path: '/pool-installs',
-        template: 'src/pages/pools.js',
-        getData: () => contentfulImages['singles']
-      },
+      // {
+      //   path: '/pool-installs',
+      //   template: 'src/pages/pools.js',
+      //   getData: () => contentfulImages['singles']
+      // },
       {
         path: '/pool-gallery',
         template: 'src/pages/pool-gallery.js',
