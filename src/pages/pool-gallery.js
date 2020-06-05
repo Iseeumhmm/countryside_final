@@ -100,7 +100,7 @@ const PoolGallery = () => {
         document.body.appendChild(script);
         setTimeout(() => {
             setLoading(false)
-        }, 1500)
+        }, 1250)
     }, []);
     let page = (
         <PageContainer className="page-container" style={{ position: "relative", overflowX: "hidden" }}>

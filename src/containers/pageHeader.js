@@ -1,6 +1,5 @@
 
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'components/Router'
 
 var ids = require('short-id')
