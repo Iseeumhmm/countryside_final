@@ -10,8 +10,12 @@ export default {
 '__react_static_root__/src/pages/pool-gallery.js': require('__react_static_root__/src/pages/pool-gallery.js').default,
 '__react_static_root__/src/pages/servicesPools.js': require('__react_static_root__/src/pages/servicesPools.js').default,
 '__react_static_root__/src/pages/services.js': require('__react_static_root__/src/pages/services.js').default,
-'__react_static_root__/src/pages/warranty.js': require('__react_static_root__/src/pages/warranty.js').default,
-'__react_static_root__/src/pages/pools.js': require('__react_static_root__/src/pages/pools.js').default
+'__react_static_root__/src/pages/warranty.js': require('__react_static_root__/src/pages/warranty.js').default
+}
+
+export const notFoundTemplate = '__react_static_root__/src/pages/404.js'
+
+rc/pages/pools.js').default
 }
 
 export const notFoundTemplate = '__react_static_root__/src/pages/404.js'
