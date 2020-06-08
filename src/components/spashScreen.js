@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-const logo = require('../images/logos/LargeLogo.png')
+import Logo from '../components/logo'
 
 const fadeOut = keyframes` 
 0%      { opacity: 1 }
@@ -16,23 +16,14 @@ const PageContainer = styled.div`
     background-color: #FFFFFA;
     animation: ${fadeOut} 1.5s linear;
     animation-fill-mode: forwards;
-`  
+`
 const SplashContainer = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 `
-const Logo = styled.div`
-    background-image: url(${logo});
-    background-size: cover;
-    position: relative;
-    right: 1rem;
-    margin:  1rem auto;
-    width: 25rem;
-    height: 9rem;
-  
-`
+
 const fillAnim = keyframes` 
     {
         0%  {transform: scale(0.45);
@@ -120,7 +111,7 @@ const SphereRef = styled.div`
         border-radius:100%;
     }
 `
-    const Mana = styled.div`
+const Mana = styled.div`
         display: block;
         position: relative;
         margin: 0px auto;
@@ -132,7 +123,7 @@ const SplashScreen = () => {
             <Logo />
             <SplashContainer>
                 <Mana>
-                    <Bowl />  
+                    <Bowl />
                     <SphereRef />
                 </Mana>
             </SplashContainer>

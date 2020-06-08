@@ -5,7 +5,8 @@ import ReactGA from 'react-ga'
 import TextContainer from '../containers/pools/TextContainer'
 import Event from '../components/helperFuncrtions/AnalyticsEvents'
 import catalogue from '../../public/Leisure Pools Consumer Brochure 2019-0424.pdf'
-import logo from '../images/logos/LargeLogoBlack.png'
+import logo from '../images/logos/LargeLogo.png'
+import LogoComponent from '../components/logo'
 
 const animateCatalogue = keyframes`
 0%      { color: #8AD30D; }
@@ -14,6 +15,7 @@ const animateCatalogue = keyframes`
 `
 
 const PageContainer = styled.div`
+    padding-top: 4.5rem;
     #catalogue {
         padding-top: 4rem;
         font-size: 2rem;
@@ -37,6 +39,7 @@ const Logo = styled.div`
     min-height: 9rem;
     margin: auto;
     margin-top: 4.5rem;
+    padding-bottom: 3rem;
     background-image: url(${logo});
     background-size: cover;
     background-position: center center;
@@ -71,12 +74,12 @@ export default function Pools() {
         <PageContainer id="pools" style={{ position: "relative", overflowX: "hidden" }}>
             <BackgroundContainer >
                 {/* <NavBar style={{ zIndex: "1000" }} /> */}
-                <Link to="/"><Logo /></Link>
+                <Link to="/"><LogoComponent /></Link>
                 {/* <BannerNav /> */}
                 <ContentContainer>
                     <div className="grid">
                         <TextContainer id="one">
-                            <h1>Your London &amp; Area Pool Builder</h1>
+                            <h1 style={{ padding: '3rem 0' }} >Your London &amp; Area Pool Builder</h1>
                             <p>We install quality fiberglass in ground swimming pools, fiberglass plunge pools, fiberglass lap pools and water features in and around London Ontario. We are a trusted landscape company with the experience, knowledge and staff to create your landscape dream safely, efficiently and affordably.
                         </p>
                             <a onClick={() => Event("Our Work - Download Catalogue")} id="catalogue" href={catalogue} download>Download Pool Catalogue</a>

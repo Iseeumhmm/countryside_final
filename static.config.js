@@ -27,11 +27,11 @@ export default {
         path: '/warranty',
         template: 'src/pages/warranty.js',
       },
-      {
-        path: '/pool-installs',
-        template: 'src/pages/pools.js',
-        getData: () => contentfulImages['singles']
-      },
+      // {
+      //   path: '/pool-installs',
+      //   template: 'src/pages/pools.js',
+      //   getData: () => contentfulImages['singles']
+      // },
       {
         path: '/pool-gallery',
         template: 'src/pages/pool-gallery.js',
@@ -70,7 +70,7 @@ export default {
     ]
   },
   // siteRoot: 'https://countrysidelandscape.ca',
-  siteRoot: 'https://testing.countrysidelandscape.ca',
+  siteRoot: 'https://countrysidelandscape.ca',
   // webpack: (config, { stage }) => {
   //   if (stage === 'prod') {
   //     config.entry = ['babel-polyfill', config.entry]

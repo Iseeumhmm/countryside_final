@@ -1,8 +1,7 @@
 import React from 'react'
 import BannerNav from '../../containers/home/BannerNav'
 import styled from 'styled-components'
-const logo = require('../../images/logos/LargeLogo.png')
-
+import Logo from '../../components/logo'
 // styles
 const TextContainer = styled.div`
     color: white;
@@ -25,17 +24,6 @@ const TextContainer = styled.div`
         text-align: center;
     }
 `
-const Logo = styled.div`
-    position: relative;
-    margin: 1rem auto 1rem;
-    right: 1rem;
-    width: 25rem;
-    min-height: 9rem;
-    background-image: url(${logo});
-    background-size: cover;
-    background-position: center center;
-`
-
 export default function Banner(props) {
     return (
         <React.Fragment>
