@@ -5,7 +5,7 @@ import ReactGA from 'react-ga'
 import Markdown from 'react-markdown'
 import NavBar from '../containers/navigation/navbar'
 import FooterNav from '../containers/navigation/footerNav'
-import logo from '../images/logos/LargeLogoBlack.png'
+import Logo from '../components/logo'
 import warranty from '../images/CountrysideWarranty.md'
 
 // Styles
@@ -29,21 +29,6 @@ const HeaderContainer = styled.div`
   justify-content: center;
   @media(min-width: 735px){
     justify-content: flex-start;
-  }
-`
-const Logo = styled.div`
-  width: 25rem;
-  min-height: 9rem;
-  margin-top: 3rem;
-  background-image: url(${logo});
-  background-size: cover;
-  background-position: center center;
-  @media(min-width: 1081px) {
-    margin-top: 1rem;
-    position:absolute;
-    top: 0;
-    left: 49%;
-    transform: translateX(-50%);
   }
 `
 const TextContainer = styled.div`
@@ -89,9 +74,8 @@ export default function About() {
     <PageContainer>
       <HeaderContainer>
       <NavBar black />
-        <Link to="/"><Logo /></Link>
+        <Link style= {{ width: '100%', height: '100%' }} to="/"><Logo /></Link>
       </HeaderContainer>
-      {/* <div className="shadow"></div> */}
       <TextContainer>
         <Markdown className="markdown" escapeHtml={false}>{terms}</Markdown>
       </TextContainer>

@@ -5,10 +5,9 @@ import { useRouteData } from 'react-static'
 import Markdown from 'react-markdown'
 import NavBar from '../containers/navigation/navbar'
 import FooterNav from '../containers/navigation/footerNav'
-// require('../components/lazyLoad.js')
 import background from '../images/backgrounds/about.jpg'
 import backgroundLarge from '../images/backgrounds/aboutLarge.jpg'
-import  logo from'../images/logos/LargeLogoBlack.png'
+import Logo from '../components/logo'
 
 // Styles
 const PageContainer = styled.div`
@@ -18,7 +17,6 @@ const PageContainer = styled.div`
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #FBFBFB;
-  /* background-color: ${ ({theme: {lightGrey}}) => lightGrey }; */
   color: ${ ({theme: {darkGrey}}) => darkGrey };
   max-width: 100%;
   overflow-x: hidden;
@@ -60,21 +58,6 @@ const HeaderContainer = styled.div`
   justify-content: center;
   @media(min-width: 735px){
     justify-content: flex-start;
-  }
-`
-const Logo = styled.div`
-  width: 25rem;
-  min-height: 9rem;
-  margin-top: 3rem;
-  background-image: url(${logo});
-  background-size: cover;
-  background-position: center center;
-  @media(min-width: 1081px) {
-    margin-top: 1rem;
-    position:absolute;
-    top: 0;
-    left: 49%;
-    transform: translateX(-50%);
   }
 `
 const TextContainer = styled.div`
@@ -123,7 +106,7 @@ export default function About() {
     <PageContainer>
       <HeaderContainer>
       <NavBar black style={{zIndex: "1000"}}/>
-        <Link to="/"><Logo /></Link>
+        <Link style={{ width: '100%', height: '100%'}} to="/"><Logo /></Link>
       </HeaderContainer>
       <div className="shadow"></div>
       <TextContainer>
@@ -139,8 +122,6 @@ export default function About() {
       <TextContainer>
         <div style={{width: '100%', textAlign: 'center', padding: "3.2rem 0"}}>
           <Photo src={`${ourStoryContent[1].headShotPhoto.fields.file.url}?w=300&fl=progressive`}/>
-          {/* <lit-lazy-image id="img" alt="img" src={`${ourStoryContent[0].headShotPhoto.fields.file.url}?w=300&fl=progressive`}> */}
-          {/* </lit-lazy-image> */}
           <h2>{ourStoryContent[1].name}</h2>
         </div>
         <Markdown source={ourStoryContent[1].bioText} />

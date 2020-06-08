@@ -6,7 +6,7 @@ import { useRouteData, Head } from 'react-static'
 import ViewPager from '../containers/springs/ViewPagerServices'
 import styled from 'styled-components'
 // import Fade from 'react-reveal/Fade';
-import logo from '../images/logos/LargeLogo.png'
+import Logo from '../components/logo'
 
 //Styles
 
@@ -43,18 +43,6 @@ const PageContainer = styled.div`
         height: ${ ({ height }) => height}px;
         border: 3px solid blue;
     }
-`
-const Logo = styled.div`
-    position: absolute;
-    left: 50%;
-    top: 2rem;
-    transform: translateX(-50%);
-    width: 25rem;
-    height: 9rem;
-    background-image: url(${logo});
-    background-size: cover;
-    background-position: center center;
-    z-index: 100;
 `
 const HeaderContainer = styled.div`
     position: absolute;
@@ -123,7 +111,7 @@ const Services = (props) => {
                 }) : null}
             </Head>
             <HeaderContainer id="header">
-                <Link to="/"><Logo /></Link>
+                <Link style={{ zIndex: '100' }} to="/"><Logo /></Link>
             </HeaderContainer>
             <NavBar services={handlePageChange} style={{ zIndex: "1000" }} />
             {projects ? <ViewPager id="view_pager" images={pageImages[0]} projects={projects} /> : null}

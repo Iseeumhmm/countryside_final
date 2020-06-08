@@ -5,7 +5,7 @@ import { useRouteData } from 'react-static'
 import Fade from 'react-reveal/Fade';
 import ReactGA from 'react-ga'
 import NavBar from '../containers/navigation/navbar'
-import logo from '../images/logos/LargeLogoBlack.png'
+import Logo from '../components/logo'
 var ids = require('short-id')
 
 const PageContainer = styled.div`
@@ -33,14 +33,6 @@ const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-`
-const Logo = styled.img.attrs({
-    src: logo
-})`
-   width: 25rem;
-    min-height: 9rem;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
 `
 const GridImageContainer = styled.div`
  p {

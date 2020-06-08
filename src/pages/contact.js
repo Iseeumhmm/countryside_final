@@ -4,10 +4,9 @@ import { Link } from 'components/Router'
 import '../artibot.css'
 import NavBar from '../containers/navigation/navbar'
 import Event from '../components/helperFuncrtions/AnalyticsEvents'
-import logo from '../images/logos/LargeLogoBlack.png'
 import Background from '../images/backgrounds/contact.jpg'
 import BackgroundLarge from '../images/backgrounds/contactLarge.jpg'
-
+import Logo from '../components/logo'
 
 // Style
 
@@ -60,7 +59,7 @@ const TextContainer = styled.div`
   text-align: center;
   p {
     margin-top: 0;
-    color: ${({ theme: {lightGrey} }) => lightGrey };
+    color: ${({ theme: { lightGrey } }) => lightGrey};
     font-weight: 400;
     font-family: 'Alegreya Sans SC';
     font-size: 4rem;
@@ -74,21 +73,9 @@ const TextContainer = styled.div`
     p { margin-bottom: 1rem; }
   }
 `
-const Logo = styled.div`
-  margin:  0 auto 5rem;
-  width: 25rem;
-  min-height: 9rem;
-  background-image: url(${logo});
-  background-size: cover;
-  background-position: center center;
-  @media(min-width: 1575px){
-    margin-bottom: 2rem;
-  }
-`
-
 const ContactButton = styled.button`
   background-color: rgba(255,255,255, .1);
-  color: ${({ theme: {lightGrey} }) => lightGrey };
+  color: ${({ theme: { lightGrey } }) => lightGrey};
   border: none;
   border-radius: 4px;
   margin-top: 1.5rem;
@@ -104,7 +91,7 @@ const ContactButton = styled.button`
     outline: none;
   }
   @media(min-width: 1575px){
-    background-color: ${({ theme: {highlight} }) => highlight };
+    background-color: ${({ theme: { highlight } }) => highlight};
   }
 `
 const FooterTextContainer = styled.div`
@@ -114,7 +101,7 @@ const FooterTextContainer = styled.div`
   transform: translateX(-50%);
   h2:first-of-type { padding-bottom: 3rem; }
   h2, a { 
-    color: ${({ theme: {lightGrey} }) => lightGrey }; 
+    color: ${({ theme: { lightGrey } }) => lightGrey}; 
     font-size: 1.75rem;
   }
   a { font-size: 2rem; }
@@ -130,44 +117,44 @@ const FooterTextContainer = styled.div`
 
 
 export default function Contact() {
-    const [viewHeight, setViewHeight] = useState(null)
-    const handleResize = (ele) => {
-      setViewHeight(ele)
-    }
-    useEffect( () => {
-      handleResize(window.innerHeight)
-      window.addEventListener('resize', handleResize(window.innerHeight));
-      window.onorientationchange =  () => setViewHeight(null)
-      const script = document.createElement("script");
-      script.type = "text/javascript"
-      script.async = true
-      script.id = "artibot";
-      script.setAttribute('crossorigin','SameSite=None')
-      script.innerHTML = "!function(t,e){t.artibotApi={l:[],t:[],on:function(){this.l.push(arguments)},trigger:function(){this.t.push(arguments)}};var a=!1,i=e.createElement('script');i.async=!0,i.type='text/javascript',i.src='https://app.artibot.ai/loader.js',e.getElementsByTagName('head').item(0).appendChild(i),i.onreadystatechange=i.onload=function(){if(!(a||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState)){new window.ArtiBot({i:'10b60f1d-af20-48f5-8fe2-d77ec70d0158'});a=!0}}}(window,document);"
-      document.body.appendChild(script)
+  const [viewHeight, setViewHeight] = useState(null)
+  const handleResize = (ele) => {
+    setViewHeight(ele)
+  }
+  useEffect(() => {
+    handleResize(window.innerHeight)
+    window.addEventListener('resize', handleResize(window.innerHeight));
+    window.onorientationchange = () => setViewHeight(null)
+    const script = document.createElement("script");
+    script.type = "text/javascript"
+    script.async = true
+    script.id = "artibot";
+    script.setAttribute('crossorigin', 'SameSite=None')
+    script.innerHTML = "!function(t,e){t.artibotApi={l:[],t:[],on:function(){this.l.push(arguments)},trigger:function(){this.t.push(arguments)}};var a=!1,i=e.createElement('script');i.async=!0,i.type='text/javascript',i.src='https://app.artibot.ai/loader.js',e.getElementsByTagName('head').item(0).appendChild(i),i.onreadystatechange=i.onload=function(){if(!(a||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState)){new window.ArtiBot({i:'10b60f1d-af20-48f5-8fe2-d77ec70d0158'});a=!0}}}(window,document);"
+    document.body.appendChild(script)
 
-      return () => {
-        window.removeEventListener('resize', handleResize(window.innerHeight))
-        window.onorientationchange = null
-      }
-    }, [setViewHeight])
-    return (
-        <PageContainer vh={viewHeight}>
-          <NavBar style={{zIndex: "1000"}}/>
-          <BackgroundContainer />
-          <TextContainer>
-            <Link to="/">
-              <Logo vh={viewHeight}/>
-            </Link>
-            <p>It's your space</p>
-            <ContactButton className="artibot-button-expand">QUOTE</ContactButton>
-            <FooterTextContainer>
-                <h2 style={{ fontSize: "2.5rem" }}>505 Talbot St. E. Aylmer, ON</h2>
-                <h2 style={{textAlign: "left"}}>VINCE<a onClick={ () => Event("Contact Phone - Vince") } href="tel: 519-403-5699" style={{float: "right"}}>(519) 403-5699</a></h2>
-                <h2 style={{textAlign: "left"}}>JOHN<a onClick={ () => Event("Contact Phone - John") } href="tel: 519-619-9593" style={{float: "right"}}>(519) 619-9593</a></h2>
-            </FooterTextContainer>
-          </TextContainer>
-        </PageContainer>
-    );
+    return () => {
+      window.removeEventListener('resize', handleResize(window.innerHeight))
+      window.onorientationchange = null
+    }
+  }, [setViewHeight])
+  return (
+    <PageContainer vh={viewHeight}>
+      <NavBar style={{ zIndex: "1000" }} />
+      <BackgroundContainer />
+      <TextContainer>
+        <Link to="/">
+          <Logo vh={viewHeight} />
+        </Link>
+        <p  style= {{ marginTop: '2rem' }} >It's your space</p>
+        <ContactButton className="artibot-button-expand">QUOTE</ContactButton>
+        <FooterTextContainer>
+          <h2 style={{ fontSize: "2.5rem" }}>505 Talbot St. E. Aylmer, ON</h2>
+          <h2 style={{ textAlign: "left" }}>VINCE<a onClick={() => Event("Contact Phone - Vince")} href="tel: 519-403-5699" style={{ float: "right" }}>(519) 403-5699</a></h2>
+          <h2 style={{ textAlign: "left" }}>JOHN<a onClick={() => Event("Contact Phone - John")} href="tel: 519-619-9593" style={{ float: "right" }}>(519) 619-9593</a></h2>
+        </FooterTextContainer>
+      </TextContainer>
+    </PageContainer>
+  );
 }
 
