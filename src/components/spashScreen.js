@@ -62,7 +62,7 @@ const Bowl = styled.div`
     width: 100px;
     height: 100px;
     border-radius:100%;
-    background-image: -webkit-linear-gradient(top,#0099cc 50%,#808080 50%);
+    background-image: -webkit-linear-gradient(top,#3b4145 50%,#808080 50%);
     background-size:40px 200px; 
     box-shadow: inset 0px 0px 30px 5px rgba(0,0,238,0.314);
     margin: 50px auto;
@@ -76,7 +76,7 @@ const Bowl = styled.div`
         width: 98px;
         height: 20px;
         border-radius:100%;
-        background-color:#0067b6;
+        background-color:#3b4145;
         position: absolute;  
         top:90px; 
         margin: 5px 0px;
