@@ -74,7 +74,7 @@ export default function About() {
     <PageContainer>
       <HeaderContainer>
       <NavBar black />
-        <Link style= {{ width: '100%', height: '100%' }} to="/"><Logo /></Link>
+        <Link style={{ position: 'absolute', width: '100%', height: '100%' }} to="/"><Logo /></Link>
       </HeaderContainer>
       <TextContainer>
         <Markdown className="markdown" escapeHtml={false}>{terms}</Markdown>

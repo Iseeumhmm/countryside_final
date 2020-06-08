@@ -86,7 +86,7 @@ const Bowl = styled.div`
     }
 `
 const SphereRef = styled.div`
-    margin-left: -35px;
+    /* margin-left: -35px; */
     position: absolute;
     width: 70px;height: 60px;
     border-radius:100%;
@@ -103,7 +103,8 @@ const SphereRef = styled.div`
     &:after{
         content:"";
         position: absolute;
-        width: 200px;height: 30px;
+        width: 200px;
+        height: 30px;
         margin: 80px 0px 0px -130px ;
         background-image: radial-gradient(
         center,rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%   
