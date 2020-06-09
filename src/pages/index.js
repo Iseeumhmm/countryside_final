@@ -26,7 +26,7 @@ const PageContainer = styled.div`
 const Container = styled.div`
   position: fixed;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   h1 { color: white; }
   animation: ${fadeIn} 1.5s linear;
