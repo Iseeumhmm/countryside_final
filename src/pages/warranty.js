@@ -61,26 +61,29 @@ const TextContainer = styled.div`
 
 export default function About() {
   const [ terms, setTerms ] = useState(null)
+  const [ loading, setLoading ] = useState(true)
 
   useEffect(() => {
     ReactGA.set({ page: window.location.pathname });
     ReactGA.pageview(window.location.pathname)
     fetch(warranty).then((response) => response.text().then( (text) => {
       setTerms(text)
+      setLoading(false)
     }))
-  },[])
 
-  return (
-    <PageContainer>
-      <HeaderContainer>
-      <NavBar black />
-        <Link style={{ position: 'absolute', width: '100%', height: '100%' }} to="/"><Logo /></Link>
-      </HeaderContainer>
-      <TextContainer>
-        <Markdown className="markdown" escapeHtml={false}>{terms}</Markdown>
-      </TextContainer>
-      <FooterNav ourStory/>
-  </PageContainer>
-  )
+  },[])
+const page = (
+  <PageContainer>
+    <HeaderContainer>
+    <NavBar black />
+      <Link style={{ position: 'absolute', width: '100%', height: '100%' }} to="/"><Logo /></Link>
+    </HeaderContainer>
+    <TextContainer>
+      <Markdown className="markdown" escapeHtml={false}>{terms}</Markdown>
+    </TextContainer>
+    <FooterNav ourStory/>
+</PageContainer>
+);
+  return loading ? <p>Loading...</p> : page
 }
 

@@ -19,6 +19,7 @@ const PageContainer = styled.div`
   background-color: #FBFBFB;
   color: ${ ({theme: {darkGrey}}) => darkGrey };
   max-width: 100vw;
+  width: 100vw;
   overflow-x: hidden;
   .headline { padding: 110vw 0 0; }
   h1 { color: ${ ({theme: {darkGrey}}) => darkGrey }; }

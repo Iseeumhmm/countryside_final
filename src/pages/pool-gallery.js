@@ -9,6 +9,7 @@ import Logo from '../components/logo'
 var ids = require('short-id')
 
 const PageContainer = styled.div`
+width: 100vw;
     h1, h2 {
         text-align: center;
     }
@@ -132,7 +133,7 @@ const PoolGallery = () => {
         </ PageContainer>
     )
     return loading ? loadingPage : page
-   
+
 }
 
 export default PoolGallery;
