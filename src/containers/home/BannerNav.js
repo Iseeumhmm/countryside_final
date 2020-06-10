@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Link } from 'components/Router'
 import Event from '../../components/helperFuncrtions/AnalyticsEvents'
 import styled from 'styled-components'
@@ -27,11 +27,21 @@ const NavList = styled.ul`
 `
 
 export default function BannerNav(props) {
-   
+    const pools = useRef(null);
+    useEffect( () => {
+        pools.current = document.querySelector('#pools');
+    }, []);
+    const poolsClicked = () => {
+        Event("Home Center Nav - Pools");
+        if( pools ) {
+            pools.current.scrollIntoView();
+            console.log(pools.current)
+        }
+    }
     return (
         <NavList secondary={props.secondary}>
             <li><Link to="/about" onClick={ () => Event("Home Center Nav - Our Story") }>OUR STORY</Link></li>
-            <li><a href="#pools" onClick={ () => Event("Home Center Nav - Pools") }>POOLS</a></li>
+            <li><a href="#pools" onClick={ () => poolsClicked() }>POOLS</a></li>
             <li style={{
                 fontSize: "2rem", 
                 marginTop: "-.1rem", 
