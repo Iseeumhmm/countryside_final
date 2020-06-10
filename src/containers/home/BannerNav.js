@@ -34,14 +34,13 @@ export default function BannerNav(props) {
     const poolsClicked = () => {
         Event("Home Center Nav - Pools");
         if( pools ) {
-            pools.current.scrollIntoView();
-            console.log(pools.current)
+            pools.current.scrollIntoView({behavior: 'smooth'});
         }
     }
     return (
         <NavList secondary={props.secondary}>
             <li><Link to="/about" onClick={ () => Event("Home Center Nav - Our Story") }>OUR STORY</Link></li>
-            <li><a href="#pools" onClick={ () => poolsClicked() }>POOLS</a></li>
+            <li><a onClick={ () => poolsClicked() }>POOLS</a></li>
             <li style={{
                 fontSize: "2rem", 
                 marginTop: "-.1rem", 

@@ -4,8 +4,8 @@ import styled, { keyframes } from 'styled-components'
 import ReactGA from 'react-ga'
 import TextContainer from '../containers/pools/TextContainer'
 import Event from '../components/helperFuncrtions/AnalyticsEvents'
-import catalogue from '../../public/Leisure Pools Consumer Brochure 2019-0424.pdf'
-import logo from '../images/logos/LargeLogo.png'
+// import catalogue from '../../public/LeisurePoolsConsumerBrochure2019-0424.pdf'
+// import logo from '../images/logos/LargeLogo.png'
 import LogoComponent from '../components/logo'
 
 const animateCatalogue = keyframes`
@@ -34,21 +34,21 @@ const BackgroundContainer = styled.div`
 @media( min-width: 950px ) {
 }
 `
-const Logo = styled.div`
-    width: 25rem;
-    min-height: 9rem;
-    margin: auto;
-    margin-top: 4.5rem;
-    padding-bottom: 3rem;
-    background-image: url(${logo});
-    background-size: cover;
-    background-position: center center;
-    z-index: 50;
-    @media(min-width: 555px) {
-        width: 37.5rem;
-        min-height: 13.5rem;
-    }
-`
+// const Logo = styled.div`
+//     width: 25rem;
+//     min-height: 9rem;
+//     margin: auto;
+//     margin-top: 4.5rem;
+//     padding-bottom: 3rem;
+//     background-image: url(${logo});
+//     background-size: cover;
+//     background-position: center center;
+//     z-index: 50;
+//     @media(min-width: 555px) {
+//         width: 37.5rem;
+//         min-height: 13.5rem;
+//     }
+// `
 
 const ContentContainer = styled.div`
     width: 95%;
@@ -82,7 +82,7 @@ export default function Pools() {
                             <h1 style={{ padding: '3rem 0' }} >Your London &amp; Area Pool Builder</h1>
                             <p>We install quality fiberglass in ground swimming pools, fiberglass plunge pools, fiberglass lap pools and water features in and around London Ontario. We are a trusted landscape company with the experience, knowledge and staff to create your landscape dream safely, efficiently and affordably.
                         </p>
-                            <a onClick={() => Event("Our Work - Download Catalogue")} id="catalogue" href={catalogue} download>Download Pool Catalogue</a>
+                            <a onClick={() => Event("Our Work - Download Catalogue")} id="catalogue" href="/LeisurePoolsConsumerBrochure2019-0424.pdf" download>Download Pool Catalogue</a>
                         </TextContainer>
                         
                         <TextContainer id="four">
