@@ -31,7 +31,7 @@ width: 100vw;
     }
 `
 const HeaderContainer = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
 `
