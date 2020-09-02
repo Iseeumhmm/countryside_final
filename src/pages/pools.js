@@ -87,7 +87,7 @@ export default function Pools() {
                         
                         <TextContainer id="four">
                             <h2>We bring your vision to life with our expertise.</h2>
-                            <p>Countryside Landscape is a one-stop shop for custom landscapes. Our objective is to create unique spaces that are tailored to your site specific challenges. Whether your project scope is a small pocket garden in a downtown location or a sprawling country estate, we are committed to excellence in every stage of our project.</p>
+                            <p>Countryside Landscape is a one-stop shop for custom landscapes and we're one of London's most trusted pool install companies. Our objective is to create unique spaces that are tailored to your site specific challenges. Whether your project scope is a small pocket garden in a downtown location or a sprawling country estate, we are committed to excellence in every stage of our project.</p>
                         </TextContainer>
                         <TextContainer id="five">
                             <h2>Our Services</h2>
