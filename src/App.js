@@ -10,9 +10,9 @@ addPrefetchExcludes(['dynamic'])
 
 const theme = {
   // Global
-  fontSize: "1.25rem", 
+  fontSize: "1.25rem",
   headerPadding: "5.2rem 0 2rem",
-  
+
 
   // Colours
   mainColour: "#1372B0",
@@ -23,7 +23,7 @@ const theme = {
   highlightSecondary: "#E6AD65",
 
   // Pool Page
-  poolPageBackground: "#2C5E7E", 
+  poolPageBackground: "#2C5E7E",
   lineHeight: "2.6rem"
 }
 
@@ -123,13 +123,14 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
   }
 `
-const trackingId = "UA-153961441-2"; 
+const trackingId = "UA-153961441-2";
 ReactGA.initialize(trackingId);
 function App() {
- 
+
   return (
     <Root>
       <Head>
+        <meta name="description" content="We install quality in-ground swimming pools, lap pools and water features in the London Ontario area" />
           <meta property="og:locale" content="en_CA" />
           <meta property="og:title" content="Your London & Area Pool Buider" />
           <meta property="og:type" content="website" />
@@ -138,19 +139,20 @@ function App() {
           <meta property="og:url" content="https://countrysidelandscape.ca" />
           <meta property="og:image" content="https://countrysidelandscape.ca/ogImage.jpg" />
           <meta property="og:image:secure_url" content="https://countrysidelandscape.ca/ogImage.jpg" />
+          <link rel="canonical" href="https://countrysidelandscape.ca/"></link>
           <title>Your London & Area Pool Builder</title>
       </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <div className="content">
-          <React.Suspense fallback={<em>Loading...</em>}>
-            <Router>
-              <Dynamic path="dynamic" />
-              <Routes path="*" />
-            </Router>
-          </React.Suspense>
-        </div>
-      </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <div className="content">
+            <React.Suspense fallback={<em>Loading...</em>}>
+              <Router>
+                <Dynamic path="dynamic" />
+                <Routes path="*" />
+              </Router>
+            </React.Suspense>
+          </div>
+        </ThemeProvider>
     </Root>
   )
 }
