@@ -80,7 +80,7 @@ export default function Pools() {
                     <div className="grid">
                         <TextContainer id="one">
                             <h1 style={{ padding: '3rem 0' }} >Your London &amp; Area Pool Builder</h1>
-                            <p>We install quality fiberglass in ground swimming pools, fiberglass plunge pools, fiberglass lap pools and water features in and around London Ontario. We are a trusted landscape company with the experience, knowledge and staff to create your landscape dream safely, efficiently and affordably.
+                            <p>We are a London pool contractor who installs quality fiberglass in ground swimming pools, fiberglass plunge pools, fiberglass lap pools and water features. We are a trusted landscape company with the experience, knowledge and staff to create your landscape dream safely, efficiently and affordably.
                         </p>
                             <a onClick={() => Event("Our Work - Download Catalogue")} id="catalogue" href="/LeisurePoolsConsumerBrochure2019-0424.pdf" download>Download Pool Catalogue</a>
                         </TextContainer>
